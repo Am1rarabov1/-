@@ -1,0 +1,64 @@
+name: Fetch assets & deploy to GitHub Pages
+
+on:
+  push:
+    branches: [claude/fable-showcase-websites-run1r4]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.fetch.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/fable-showcase-websites-run1r4
+      - name: Fetch and optimize generated media
+        id: fetch
+        run: bash tools/fetch-assets.sh
+      - name: Commit downloaded assets
+        run: |
+          git config user.name "asset-fetcher[bot]"
+          git config user.email "actions@github.com"
+          git add -A current/assets signal/assets atelier/assets
+          if ! git diff --cached --quiet; then
+            git commit -m "Add optimized generated media assets"
+            git push origin claude/fable-showcase-websites-run1r4
+          else
+            echo "no new assets"
+          fi
+
+  deploy:
+    needs: assets
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/fable-showcase-websites-run1r4
+      - name: Stage site
+        run: |
+          mkdir -p _site
+          cp index.html _site/ 2>/dev/null || true
+          cp -r current signal atelier _site/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

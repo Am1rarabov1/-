@@ -1,0 +1,16 @@
+[
+  { "type": "image", "width": 1600, "dest": "current/assets/project-lobby.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033602_433779f7-0c46-4407-8688-065855fe85d3.png" },
+  { "type": "image", "width": 1600, "dest": "current/assets/project-fiber.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033603_2c915bb6-5680-4b87-8b00-88e755d1242a.png" },
+  { "type": "image", "width": 1600, "dest": "current/assets/project-cinema.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033606_1b20d0f4-7082-432a-bb53-d590b78efed3.png" },
+  { "type": "image", "width": 1600, "dest": "current/assets/project-rack.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033608_10f48b1a-1a7b-4be3-84c1-fff3b673b912.png" },
+  { "type": "image", "width": 1200, "dest": "signal/assets/hands.jpg",    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033617_e60a6cc9-ce12-4a52-9ad8-90fe18730939.png" },
+  { "type": "image", "width": 1200, "dest": "signal/assets/coils.jpg",    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033619_eb98ed00-b26e-44de-a2f7-d5131b7ad76b.png" },
+  { "type": "image", "width": 1600, "dest": "signal/assets/rackroom.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033622_fc8f035e-d4d1-4769-8572-42429b69e1f0.png" },
+  { "type": "image", "width": 1200, "dest": "signal/assets/ladder.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033623_4d52c09e-c114-44eb-8aa3-10169ff4ad5a.png" },
+  { "type": "image", "width": 2200, "dest": "atelier/assets/hero-living.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033533_3f19290e-66b1-4366-8739-6a2987217c09.png" },
+  { "type": "image", "width": 1200, "dest": "atelier/assets/kitchen.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033536_bc08c8af-77e4-44e4-81c9-58a76226f37e.png" },
+  { "type": "image", "width": 1200, "dest": "atelier/assets/bedroom.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033545_c3a1bd20-c134-4ac9-9353-8f99840789a1.png" },
+  { "type": "image", "width": 1200, "dest": "atelier/assets/keypad.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033548_ea6bb1c8-446a-419c-ab8f-c0c1eca505ad.png" },
+  { "type": "image", "width": 1600, "dest": "atelier/assets/cinema.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033550_f196df36-75de-414f-9781-8a74eab148a3.png" },
+  { "type": "image", "width": 2200, "dest": "atelier/assets/exterior.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033552_9212e40b-d0c0-4622-aa1e-c224394ed18b.png" }
+]

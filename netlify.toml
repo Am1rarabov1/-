@@ -1,0 +1,13 @@
+# Netlify configuration — this repo is a fully static bundle.
+# Import the repo in Netlify (or `netlify deploy --prod --dir .`) and it serves
+# the hub at / with the three experiences at /current/, /signal/, /atelier/.
+# Each experience also works as its own standalone Netlify site: deploy the
+# subdirectory alone (`netlify deploy --prod --dir current`).
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
