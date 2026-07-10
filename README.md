@@ -1,11 +1,11 @@
-# Smart Installers × Fable — Three Websites, One Company
+# Smart Installers × Fable — Six Websites, One Company
 
-Three radically different showcase websites for **Smart Installers** (a low-voltage
-installation company), designed and built end-to-end by **Claude (Fable 5)** running
-autonomously: concept, art direction, copywriting, code, AI-generated imagery and video,
-iteration passes, and deployment.
+Six showcase websites for **Smart Installers** (a low-voltage installation company),
+designed and built end-to-end by **Claude (Fable 5)** running autonomously: concept,
+art direction, copywriting, code, AI-generated imagery and video, iteration passes,
+and deployment.
 
-## The three experiences
+## The original trio
 
 | # | Site | Universe | Signature techniques |
 |---|------|----------|----------------------|
@@ -13,8 +13,16 @@ iteration passes, and deployment.
 | 02 | [`/signal/`](./signal/) — **The Signal Standard** | Broadsheet newspaper | Variable-font Fraunces at `opsz 144 / WONK 1`, CSS halftone photography, scroll-velocity type skew, self-drawing SVG wiring schematic with traveling pulses, drop caps, dot leaders, cut-out coupon CTA |
 | 03 | [`/atelier/`](./atelier/) — **Atelier** | Quiet luxury photography | AI photo set shot to one lighting brief, hero cinemagraph (image-to-video via Kling 3.0 Turbo), sticky room chapters with crossfading lens, interactive lighting-scene dial (CSS blend-mode relighting) |
 
-The root [`index.html`](./index.html) is a triptych hub linking all three.
-**Every site documents its own making at `/guide`** — e.g. `/current/guide/`.
+## The Atelier Collection (same dusk soul, far more motion)
+
+| # | Site | Concept | Signature scroll effects |
+|---|------|---------|--------------------------|
+| 04 | [`/maison/`](./maison/) — **Maison** | A house tour at dusk | Double-door opening veil, one pinned stage where four rooms exchange via different clip-path mask wipes (iris / blind / arch), three-speed parallax detail grid, rectangle-to-arch frame morph, velocity-reactive drift marquee |
+| 05 | [`/dusk/`](./dusk/) — **Dusk** | One evening, scrolled | Page palette scrubbed through CSS variables from golden hour to midnight, fixed clock rail computing 17:42→23:58 from scroll progress, giant drifting ghost numerals, un-clipping parallax images, CSS starfield finale |
+| 06 | [`/sanctum/`](./sanctum/) — **Sanctum** | A night at the house cinema | Curtain-part hero video (Kling), pinned scroll-zoom through the cinema screen into the projector beam, center-out curtain-wipe reveals, scrub-driven end-credits roll |
+
+The root [`index.html`](./index.html) is a six-door hub linking everything.
+**Every site documents its own making at `/guide`** — e.g. `/maison/guide/`.
 
 ## How it was built
 
