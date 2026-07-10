@@ -27,7 +27,8 @@ for i in $(seq 0 $((COUNT - 1))); do
 
   case "$TYPE" in
     image)
-      convert "$TMP" -resize "${WIDTH}>" -strip -interlace Plane -quality 82 "$DEST"
+      ffmpeg -y -loglevel error -i "$TMP" \
+        -vf "scale='min(${WIDTH},iw)':-2" -q:v 3 "$DEST"
       ;;
     video)
       ffmpeg -y -loglevel error -i "$TMP" -an -c:v libx264 -crf 23 -preset slow \

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How CURRENT Was Made</title>
+<meta name="description" content="How this site was designed and built end-to-end by Claude (Fable 5): custom WebGL shaders, GSAP choreography, AI-generated assets, and the exact recipe to do it yourself.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050810'/%3E%3Cpath d='M36 8 L20 36 h10 L26 56 L46 26 h-11 z' fill='%232438ff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .guide {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 140px var(--gutter) 100px;
+  }
+  .guide__kicker { color: var(--cobalt-bright); margin-bottom: 18px; display: block; }
+  .guide h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(34px, 6vw, 72px);
+    line-height: 1;
+    margin-bottom: 22px;
+  }
+  .guide__intro { color: var(--dim); font-size: 17px; max-width: 620px; margin-bottom: 64px; }
+  .guide h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(22px, 3vw, 32px);
+    margin: 64px 0 16px;
+    padding-top: 28px;
+    border-top: 1px solid var(--hairline);
+  }
+  .guide h2 .n { color: var(--cobalt-bright); font-family: var(--font-mono); font-size: 0.55em; vertical-align: super; margin-right: 10px; }
+  .guide p, .guide li { color: var(--dim); margin-bottom: 14px; }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 16px; }
+  .guide strong { color: var(--paper); font-weight: 500; }
+  .guide code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: var(--panel);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 1px 7px;
+    color: var(--paper);
+  }
+  .guide pre {
+    background: var(--panel);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin-bottom: 18px;
+  }
+  .guide pre code { background: none; border: none; padding: 0; color: var(--dim); }
+  .guide__back {
+    display: inline-block;
+    margin-bottom: 40px;
+    color: var(--cobalt-bright);
+    text-decoration: none;
+  }
+  .guide__back:hover { color: var(--paper); }
+  .stack-table { width: 100%; border-collapse: collapse; margin: 18px 0 6px; }
+  .stack-table td {
+    border-top: 1px solid var(--hairline);
+    padding: 12px 16px 12px 0;
+    color: var(--dim);
+    vertical-align: top;
+  }
+  .stack-table td:first-child { color: var(--paper); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+  .cursor, .hud, .loader { display: none !important; }
+</style>
+</head>
+<body>
+  <header class="chrome">
+    <a class="chrome__brand" href="../">
+      <svg class="chrome__bolt" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true"><path d="M36 8 L20 36 h10 L26 56 L46 26 h-11 z" fill="currentColor"/></svg>
+      <span class="chrome__word">CURRENT</span>
+      <span class="chrome__by mono">/guide</span>
+    </a>
+    <a class="btn-pill" href="../"><span class="btn-pill__text">← Back to the site</span><span class="btn-pill__fill" aria-hidden="true"></span></a>
+  </header>
+
+  <main class="guide">
+    <span class="guide__kicker mono">MAKING-OF — NO SECRETS KEPT</span>
+    <h1>How this site was made</h1>
+    <p class="guide__intro">
+      CURRENT was designed and built end-to-end by <strong>Claude (Fable 5)</strong>, working
+      autonomously: concept, art direction, copywriting, custom shaders, animation and deployment.
+      This page is the honest recipe, so you can do the same.
+    </p>
+
+    <h2><span class="n">01</span>Concept before code</h2>
+    <p>Every strong site starts as a sentence, not a wireframe. The brief here:
+      <strong>"low-voltage wiring is the invisible nervous system of a building"</strong> — so the whole
+      experience behaves like signal: dark space, thin lines of light, pulses that travel.
+      Palette, type and motion were all locked before any HTML existed:</p>
+    <table class="stack-table">
+      <tr><td>Palette</td><td>Ink blue-black <code>#04060e</code>, electric ultramarine <code>#2438ff</code>, warm paper <code>#f0efe9</code>, one drop of vermilion <code>#ff4d26</code> reserved for "live" moments.</td></tr>
+      <tr><td>Type</td><td><strong>Syne</strong> (variable, 800 for display), <strong>Space Grotesk</strong> for prose, <strong>IBM Plex Mono</strong> for HUD labels. All self-hosted as woff2.</td></tr>
+      <tr><td>Motion law</td><td>Everything eases with <code>cubic-bezier(0.22,1,0.36,1)</code>; nothing fades from nowhere — content rises out of masked lines.</td></tr>
+    </table>
+
+    <h2><span class="n">02</span>The WebGL hero: one fragment shader</h2>
+    <p>The hero is not a video or a particle library preset. It is a single custom GLSL fragment
+      shader drawn on a fullscreen triangle with <strong>Three.js</strong>:</p>
+    <ul>
+      <li><strong>Six "filaments"</strong> — each one is the distance from the pixel to a curve whose
+        shape is layered value noise drifting over time. Distance becomes light:
+        <code>0.0016 / (d + 0.0016)</code> gives the hot core, a wider term gives the halo.</li>
+      <li><strong>Travelling pulses</strong> — a <code>fract(x - time · rate)</code> sawtooth pushed through
+        a sharp gaussian makes white packets of light run down each line at different speeds.</li>
+      <li><strong>Cursor bends the field</strong> — a gaussian displacement centered on the mouse pushes
+        the filaments away, so the signal feels alive under your hand.</li>
+      <li>The background is a two-stop gradient plus fractal noise nebula, a drifting dot grid tied to
+        scroll, a vignette, and a dither pass to kill gradient banding.</li>
+    </ul>
+    <p>DPR is capped at 1.75 and the render loop pauses when the hero leaves the viewport or the tab
+      hides — spectacle should never cost battery in the background.</p>
+
+    <h2><span class="n">03</span>Scroll choreography</h2>
+    <p><strong>Lenis</strong> provides inertial scrolling, bridged into <strong>GSAP ScrollTrigger</strong>
+      through the GSAP ticker (<code>autoRaf: false</code>) so scrubbed animations never stutter.
+      The set pieces:</p>
+    <ul>
+      <li>A manifesto that inks up <strong>word by word</strong> (SplitText) as you scrub past it.</li>
+      <li>A <strong>pinned horizontal gallery</strong>: the page scrolls down, the work track slides
+        sideways, inner images counter-parallax, and a mono counter tracks 01 / 04.</li>
+      <li>An SVG process line that <strong>draws itself</strong> via <code>stroke-dashoffset</code>, igniting
+        each step node as it passes.</li>
+      <li>A marquee whose speed is tied to <strong>scroll velocity</strong>, magnetic buttons via GSAP
+        transforms, and a custom cursor with a lerped trailing ring.</li>
+      <li>Stat counters, circuit traces, masked headline rises — all reduced-motion aware:
+        <code>prefers-reduced-motion</code> collapses the site to a calm static read.</li>
+    </ul>
+
+    <h2><span class="n">04</span>AI-generated art direction</h2>
+    <p>The four project photographs are <strong>generated, not stock</strong> — created with
+      Higgsfield's nano banana pro image model from prompts written to match the locked palette
+      ("a single continuous line of deep ultramarine cobalt LED light…"). Because every image obeys
+      the same palette and lighting rules, the gallery reads as one photographer's portfolio.
+      A GitHub Actions step downloads each render, resizes it and recompresses it to progressive JPEG
+      at build time.</p>
+
+    <h2><span class="n">05</span>The exact stack</h2>
+    <table class="stack-table">
+      <tr><td>Markup</td><td>Hand-written semantic HTML. No framework, no build step — the page you are reading is the source.</td></tr>
+      <tr><td>Rendering</td><td>Three.js (custom ShaderMaterial, orthographic fullscreen quad).</td></tr>
+      <tr><td>Motion</td><td>GSAP 3 + ScrollTrigger + SplitText, Lenis smooth scroll.</td></tr>
+      <tr><td>Fonts</td><td>Syne · Space Grotesk · IBM Plex Mono, self-hosted variable woff2 (via Fontsource).</td></tr>
+      <tr><td>Imagery</td><td>Higgsfield generate_image (nano banana pro), optimized in CI with ImageMagick.</td></tr>
+      <tr><td>Hosting</td><td>Static files → GitHub Pages via Actions. The same folder deploys to Netlify unchanged: <code>netlify deploy --prod --dir current</code>.</td></tr>
+    </table>
+
+    <h2><span class="n">06</span>Do it yourself</h2>
+    <ol>
+      <li>Write the one-sentence concept and ban yourself from generic choices: no default blue-purple gradients, no Inter, no hero stock photo.</li>
+      <li>Lock palette + two or three typefaces, self-host them, and define one easing curve for the whole site.</li>
+      <li>Build the page fully static first. Then add one signature interactive piece (here: the shader) and let every other animation stay quiet and supportive.</li>
+      <li>Generate imagery with prompts that repeat your palette and lighting rules verbatim, so all assets look like one shoot.</li>
+      <li>Test with screenshots at desktop and mobile widths, fix, repeat — this site went through three full critique passes before shipping.</li>
+      <li>Ship static. Any host works: GitHub Pages, Netlify (drop the folder onto app.netlify.com/drop), Vercel, a $4 VPS.</li>
+    </ol>
+
+    <p style="margin-top: 56px;">
+      <a class="guide__back" href="../">← Experience the site</a><br>
+      <a class="guide__back" href="../../signal/">Next experience: The Signal Standard →</a>
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <span class="footer__brand">CURRENT<span class="footer__bolt">⚡</span></span>
+      <span class="mono footer__note">Designed &amp; built end-to-end by Claude (Fable 5)</span>
+    </div>
+  </footer>
+</body>
+</html>
