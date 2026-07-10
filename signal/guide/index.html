@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How The Signal Standard Was Made</title>
+<meta name="description" content="How this broadsheet-style site was designed and built by Claude (Fable 5): variable-font typography, halftone image treatments, self-drawing SVG schematics, and the recipe to repeat it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f6f1e5'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-style='italic' text-anchor='middle' fill='%23171512'%3ES%3C/text%3E%3Crect x='0' y='54' width='64' height='10' fill='%23ff5200'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .guide { max-width: 820px; margin: 0 auto; padding: 60px var(--gutter) 90px; }
+  .guide__masthead {
+    border-bottom: 4px double var(--rule);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .guide__masthead .mono { color: var(--ink-soft); display: block; margin-bottom: 12px; }
+  .guide h1 {
+    font-family: var(--serif);
+    font-variation-settings: var(--opsz-max);
+    font-weight: 620;
+    font-size: clamp(36px, 7vw, 84px);
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+  }
+  .guide__intro { font-size: 17px; color: var(--ink-soft); max-width: 600px; margin-bottom: 40px; }
+  .guide h2 {
+    font-family: var(--serif);
+    font-variation-settings: 'opsz' 80, 'SOFT' 0, 'WONK' 1;
+    font-weight: 580;
+    font-size: clamp(24px, 3.4vw, 38px);
+    margin: 52px 0 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .guide h2 .n { font-family: var(--mono-f); font-size: 11px; color: var(--orange); vertical-align: super; margin-right: 10px; }
+  .guide p, .guide li { color: var(--ink-soft); margin-bottom: 13px; }
+  .guide strong { color: var(--ink); }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 14px; }
+  .guide code {
+    font-family: var(--mono-f);
+    font-size: 13px;
+    background: var(--paper-deep);
+    border: 1px solid var(--hairline);
+    padding: 1px 6px;
+  }
+  .guide pre {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+  }
+  .guide pre code { background: none; border: none; color: inherit; }
+  .guide__back { color: var(--orange); text-decoration: none; font-family: var(--mono-f); font-size: 12px; letter-spacing: 0.12em; }
+  .guide__back:hover { text-decoration: underline; }
+  .recipe-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .recipe-table td { border-top: 1px solid var(--hairline); padding: 11px 16px 11px 0; color: var(--ink-soft); vertical-align: top; }
+  .recipe-table td:first-child { font-family: var(--mono-f); font-size: 11px; letter-spacing: 0.1em; color: var(--ink); white-space: nowrap; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <main class="guide">
+    <div class="guide__masthead">
+      <span class="mono">THE SIGNAL STANDARD — PRODUCTION PAGES — <a class="guide__back" href="../">RETURN TO FRONT PAGE</a></span>
+      <h1>How this paper was typeset</h1>
+    </div>
+    <p class="guide__intro">
+      The Signal Standard was written, art-directed and built autonomously by
+      <strong>Claude (Fable 5)</strong>. Where the first Smart Installers experience
+      (<a class="guide__back" href="../../current/">CURRENT</a>) is a dark WebGL film, this one is
+      its deliberate opposite: a broadsheet. Same subject, different universe — that contrast is the
+      point, and this page explains the machinery.
+    </p>
+
+    <h2><span class="n">01</span>One metaphor, obeyed everywhere</h2>
+    <p>The concept: <strong>a trade journal from the golden age of print</strong>, reporting on
+      low-voltage craft. Once the metaphor is chosen, every design decision has a test — "would a
+      1950s pressroom do this?" Sections become SEC. A/B/C, services become classified listings with
+      dot leaders, stats become a spec sheet, the CTA becomes a cut-out coupon with a dashed border
+      and a scissors glyph. Nothing on the page breaks character.</p>
+
+    <h2><span class="n">02</span>Typography is the hero</h2>
+    <table class="recipe-table">
+      <tr><td>Display</td><td><strong>Fraunces</strong>, a variable font with four axes. The masthead runs it at
+        <code>font-variation-settings: 'opsz' 144, 'WONK' 1</code> — maximum optical size for razor-thin
+        contrast, with the "wonky" alternates on for old-press personality.</td></tr>
+      <tr><td>Text</td><td><strong>Archivo</strong> for running copy — a grotesque with newspaper DNA.</td></tr>
+      <tr><td>Data</td><td><strong>IBM Plex Mono</strong> for folios, captions, tickers and fine print.</td></tr>
+      <tr><td>Detail</td><td>Real drop caps (<code>float: left</code>), two-column justified lede with a
+        column rule, double-rule borders (<code>border: 4px double</code>) and dot leaders built from
+        <code>border-bottom: 2px dotted</code>.</td></tr>
+    </table>
+    <p>The palette is three inks: paper <code>#f6f1e5</code>, ink <code>#171512</code>, and safety
+      orange <code>#ff5200</code> — the color of pull-tape and warning labels, which is exactly what a
+      wiring journal would keep in the drawer.</p>
+
+    <h2><span class="n">03</span>The print effects</h2>
+    <ul>
+      <li><strong>Halftone photography.</strong> Every photo is AI-generated in high-contrast black and
+        white, then screened in CSS: a repeating radial-gradient dot matrix layered over the image
+        with <code>mix-blend-mode: overlay</code>. On hover the ink "re-saturates" — a sepia/hue-rotate
+        filter reveals warmth, like a print developing.</li>
+      <li><strong>Paper grain.</strong> A fixed SVG turbulence texture multiplied over the whole page at
+        6% opacity. Cheap, GPU-friendly, and it makes flat color feel like stock.</li>
+      <li><strong>Velocity skew.</strong> The big serif blocks shear by up to 4° based on scroll
+        velocity (GSAP <code>quickTo</code> + ScrollTrigger's <code>getVelocity()</code>), so the type
+        feels like it is being dragged across a press bed.</li>
+      <li><strong>The self-drawing schematic.</strong> A hand-coded SVG of a house is revealed with the
+        classic <code>stroke-dasharray / stroke-dashoffset</code> trick, scrubbed by scroll: the house
+        draws first, then the orange low-voltage runs, then the labeled nodes pop in. Two orange
+        pulses then travel the runs forever via <code>getPointAtLength()</code>.</li>
+    </ul>
+
+    <h2><span class="n">04</span>Motion with restraint</h2>
+    <p>Print doesn't fade — it arrives. Masthead words rise out of masked containers like plates
+      being set; field notes land with a half-degree rotation like photographs laid on a desk; the
+      coupon wobbles in with a <code>back.out</code> ease. Lenis provides the smooth scroll, bridged
+      into GSAP's ticker. Everything respects <code>prefers-reduced-motion</code>.</p>
+
+    <h2><span class="n">05</span>The stack (deliberately boring)</h2>
+    <table class="recipe-table">
+      <tr><td>Markup</td><td>Hand-written HTML. No framework, no build step.</td></tr>
+      <tr><td>Motion</td><td>GSAP 3 + ScrollTrigger + SplitText, Lenis. All self-hosted.</td></tr>
+      <tr><td>Imagery</td><td>Higgsfield nano banana pro, prompted for "1950s trade journal photography, heavy film grain" so the halftone treatment lands on honest source material.</td></tr>
+      <tr><td>Hosting</td><td>Static folder on GitHub Pages; deploys unchanged to Netlify with <code>netlify deploy --prod --dir signal</code>.</td></tr>
+    </table>
+
+    <h2><span class="n">06</span>Repeat this yourself</h2>
+    <ol>
+      <li>Pick a physical medium your subject would live in (a newspaper, a passport, a field manual, a receipt) and commit totally.</li>
+      <li>Choose one variable font with personality and learn its axes — half this site's character is <code>'opsz' 144</code>.</li>
+      <li>Steal print furniture: rules, folios, dot leaders, drop caps, captions that start with FIG.</li>
+      <li>Convert imagery to your medium (halftone screens here) so photos obey the same physics as the type.</li>
+      <li>Let motion imitate the medium — presses stamp, papers slide. No glows, no parallax hero.</li>
+      <li>Do at least three critique passes with fresh screenshots before you call it done.</li>
+    </ol>
+
+    <p style="margin-top: 48px;">
+      <a class="guide__back" href="../">← BACK TO THE FRONT PAGE</a><br><br>
+      <a class="guide__back" href="../../atelier/">NEXT EXPERIENCE: ATELIER →</a>
+    </p>
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon__row mono">
+      <span>WRITTEN, DESIGNED &amp; BUILT END-TO-END BY CLAUDE (FABLE 5)</span>
+      <a href="../">THE SIGNAL STANDARD</a>
+    </div>
+  </footer>
+</body>
+</html>

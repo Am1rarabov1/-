@@ -12,5 +12,6 @@
   { "type": "image", "width": 1200, "dest": "atelier/assets/bedroom.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033545_c3a1bd20-c134-4ac9-9353-8f99840789a1.png" },
   { "type": "image", "width": 1200, "dest": "atelier/assets/keypad.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033548_ea6bb1c8-446a-419c-ab8f-c0c1eca505ad.png" },
   { "type": "image", "width": 1600, "dest": "atelier/assets/cinema.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033550_f196df36-75de-414f-9781-8a74eab148a3.png" },
-  { "type": "image", "width": 2200, "dest": "atelier/assets/exterior.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033552_9212e40b-d0c0-4622-aa1e-c224394ed18b.png" }
+  { "type": "image", "width": 2200, "dest": "atelier/assets/exterior.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_033552_9212e40b-d0c0-4622-aa1e-c224394ed18b.png" },
+  { "type": "video", "dest": "atelier/assets/hero-living.mp4", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_034400_d9445c8a-1557-49ff-a769-ad2434e497fb.mp4" }
 ]

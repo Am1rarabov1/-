@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier — Smart Installers | Technology You Feel, Not See</title>
+<meta name="description" content="Atelier is the quiet-luxury face of Smart Installers: whole-home lighting scenes, invisible sound, effortless security. Technology you feel, not see.">
+<meta property="og:title" content="Atelier — by Smart Installers">
+<meta property="og:description" content="Technology you feel, not see.">
+<meta property="og:image" content="./assets/hero-living.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23EDE7DC'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%232A211B' stroke-width='2'/%3E%3Ccircle cx='32' cy='19' r='3.4' fill='%23B98A4A'/%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/italiana-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <!-- veil intro -->
+  <div class="veil" id="veil" aria-hidden="true">
+    <span class="veil__word">ATELIER</span>
+  </div>
+
+  <header class="bar" id="bar">
+    <a class="bar__brand" href="#top">
+      <span class="bar__mark" aria-hidden="true"></span>
+      ATELIER
+      <span class="bar__by">by Smart Installers</span>
+    </a>
+    <nav class="bar__nav" aria-label="Primary">
+      <a href="#rooms">Rooms</a>
+      <a href="#dial">The Dial</a>
+      <a href="#rituals">Rituals</a>
+      <a href="./guide/">Guide</a>
+      <a class="bar__cta" href="#enquire">Enquire</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <figure class="hero__media" id="heroMedia">
+        <video class="hero__video" id="heroVideo" autoplay muted loop playsinline
+               poster="./assets/hero-living.jpg" preload="metadata">
+          <source src="./assets/hero-living.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow serif-i" id="heroEyebrow">Smart Installers presents</p>
+        <h1 class="hero__title" id="heroTitle" aria-label="Atelier">
+          <span>A</span><span>T</span><span>E</span><span>L</span><span>I</span><span>E</span><span>R</span>
+        </h1>
+        <p class="hero__line" id="heroLine">Technology you <em class="serif-i">feel</em>, not see.</p>
+      </div>
+      <div class="hero__foot">
+        <span class="hero__foot-item">Lighting · Shade · Sound · Security</span>
+        <span class="hero__foot-item hero__scroll" aria-hidden="true">Scroll<span class="hero__scroll-line"></span></span>
+        <span class="hero__foot-item">Est. on quiet craftsmanship</span>
+      </div>
+    </section>
+
+    <!-- INTENT -->
+    <section class="intent">
+      <p class="intent__text" id="intentText">
+        The most advanced home is not the one with the most screens.
+        It is the one where the light is always <em class="serif-i">right</em>,
+        the music seems to come from <em class="serif-i">nowhere</em>,
+        and the technology disappears into the <em class="serif-i">architecture</em>.
+        This is what we install.
+      </p>
+    </section>
+
+    <!-- ROOMS: sticky media + scrolling chapters -->
+    <section class="rooms" id="rooms">
+      <div class="rooms__media">
+        <div class="rooms__frame">
+          <img class="rooms__img is-active" data-room="0" src="./assets/kitchen.jpg" alt="A minimal luxury kitchen at dusk with warm under-cabinet lighting">
+          <img class="rooms__img" data-room="1" src="./assets/bedroom.jpg" alt="A serene bedroom at golden hour with automated blinds half lowered">
+          <img class="rooms__img" data-room="2" src="./assets/cinema.jpg" alt="A private cinema in warm cream tones with amber sconces">
+          <img class="rooms__img" data-room="3" src="./assets/exterior.jpg" alt="A modern house at twilight with warm light in the windows">
+          <span class="rooms__counter serif-i" id="roomsCounter">No. 1</span>
+        </div>
+      </div>
+      <div class="rooms__chapters">
+        <article class="chapter" data-room="0">
+          <span class="chapter__no serif-i">No. 1</span>
+          <h2 class="chapter__title">The Kitchen</h2>
+          <p class="chapter__body">Under-cabinet light that rises with the morning and softens by dinner. One press of a keypad, engraved not printed, and the room moves from espresso to candlelight.</p>
+          <span class="chapter__spec">Tunable white · Engraved keypads · Invisible speakers</span>
+        </article>
+        <article class="chapter" data-room="1">
+          <span class="chapter__no serif-i">No. 2</span>
+          <h2 class="chapter__title">The Bedroom</h2>
+          <p class="chapter__body">Blinds that know the sunrise better than you do. They lower themselves as the film starts and lift, slowly, with your alarm — light as an instrument of waking.</p>
+          <span class="chapter__spec">Automated shades · Circadian scenes · Silent motors</span>
+        </article>
+        <article class="chapter" data-room="2">
+          <span class="chapter__no serif-i">No. 3</span>
+          <h2 class="chapter__title">The Screening Room</h2>
+          <p class="chapter__body">Reference sound behind acoustically transparent fabric, sconces that dim as the studio logo appears. Nobody sees a speaker. Everybody hears everything.</p>
+          <span class="chapter__spec">Reference audio · Acoustic treatment · Scene-linked dimming</span>
+        </article>
+        <article class="chapter" data-room="3">
+          <span class="chapter__no serif-i">No. 4</span>
+          <h2 class="chapter__title">The Arrival</h2>
+          <p class="chapter__body">The house recognizes the car. The path traces itself in light, the entry unlocks to a familiar hand, and the rooms you love are already warm. Coming home, choreographed.</p>
+          <span class="chapter__spec">Access control · Path lighting · Presence scenes</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- THE DIAL: interactive scene selector -->
+    <section class="dial" id="dial">
+      <div class="dial__head">
+        <p class="dial__kicker serif-i">An instrument, not an app</p>
+        <h2 class="dial__title">Turn the evening</h2>
+        <p class="dial__sub">Every Atelier home ships with scenes tuned by hand. Try one — this image is live.</p>
+      </div>
+      <div class="dial__stage">
+        <figure class="dial__media">
+          <img src="./assets/cinema.jpg" alt="A private cinema whose lighting changes with the selected scene" id="dialImg">
+          <div class="dial__wash" id="dialWash" aria-hidden="true"></div>
+          <figcaption class="dial__caption serif-i" id="dialCaption">“Screening” — sconces at 30%, screen wash warm</figcaption>
+        </figure>
+        <div class="dial__controls" role="tablist" aria-label="Lighting scenes">
+          <button class="scene" role="tab" aria-selected="false" data-scene="entertain">
+            <span class="scene__dot" aria-hidden="true"></span>Entertain
+          </button>
+          <button class="scene is-active" role="tab" aria-selected="true" data-scene="screening">
+            <span class="scene__dot" aria-hidden="true"></span>Screening
+          </button>
+          <button class="scene" role="tab" aria-selected="false" data-scene="unwind">
+            <span class="scene__dot" aria-hidden="true"></span>Unwind
+          </button>
+          <button class="scene" role="tab" aria-selected="false" data-scene="goodnight">
+            <span class="scene__dot" aria-hidden="true"></span>Goodnight
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RITUALS -->
+    <section class="rituals" id="rituals">
+      <h2 class="rituals__title">Three rituals we install</h2>
+      <ol class="rituals__list">
+        <li class="ritual">
+          <span class="ritual__no serif-i">i.</span>
+          <div>
+            <h3 class="ritual__name">Goodnight</h3>
+            <p class="ritual__body">One touch by the bed. Every light fades over sixty seconds, doors confirm themselves locked, shades seal the dark, and the house exhales.</p>
+          </div>
+        </li>
+        <li class="ritual">
+          <span class="ritual__no serif-i">ii.</span>
+          <div>
+            <h3 class="ritual__name">First Coffee</h3>
+            <p class="ritual__body">The kitchen greets you at 40% warmth, the news reads quietly in one room only, and the garden camera has already checked the gate.</p>
+          </div>
+        </li>
+        <li class="ritual">
+          <span class="ritual__no serif-i">iii.</span>
+          <div>
+            <h3 class="ritual__name">Guests Arrive</h3>
+            <p class="ritual__body">The façade brightens half a step, the playlist moves to the terrace, and the doorbell rings on your wrist, not through the dinner.</p>
+          </div>
+        </li>
+      </ol>
+      <figure class="rituals__aside">
+        <img src="./assets/keypad.jpg" alt="A minimal brass wall keypad on limewash plaster in warm evening light" loading="lazy">
+        <figcaption class="serif-i">The whole interface. Brass, engraved, backlit at night.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ENQUIRE -->
+    <section class="enquire" id="enquire">
+      <p class="enquire__kicker serif-i">Commissions for select residences</p>
+      <h2 class="enquire__title">Begin with a<br><em class="serif-i">conversation</em></h2>
+      <a class="enquire__link" href="mailto:hello@smartinstallers.com">
+        hello@smartinstallers.com
+        <span class="enquire__underline" aria-hidden="true"></span>
+      </a>
+      <p class="enquire__note">A walk-through of your home, a cup of coffee, and a plan for what it could feel like.</p>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>ATELIER — the quiet-luxury studio of Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+    <a href="./guide/">How this site was made →</a>
+  </footer>
+
+  <script src="./vendor/gsap.min.js"></script>
+  <script src="./vendor/ScrollTrigger.min.js"></script>
+  <script src="./vendor/SplitText.min.js"></script>
+  <script src="./vendor/lenis.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
