@@ -31,5 +31,14 @@
   { "type": "image", "width": 2200, "dest": "maison/assets/corridor.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_043525_800fc0a8-d9fc-4265-823a-4cfda07302db.png" },
   { "type": "image", "width": 2200, "dest": "maison/assets/library.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_043527_66e1ae92-356b-409e-8ca1-b402add8e124.png" },
   { "type": "image", "width": 2200, "dest": "maison/assets/bath.jpg",     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_043529_cb6de30e-2472-4951-a96b-ebbc98ed301c.png" },
-  { "type": "image", "width": 2200, "dest": "sanctum/assets/beam.jpg",    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_043530_fb1187d6-c4ef-4018-a651-f6b0fc4c674b.png" }
+  { "type": "image", "width": 2200, "dest": "sanctum/assets/beam.jpg",    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_043530_fb1187d6-c4ef-4018-a651-f6b0fc4c674b.png" },
+  { "type": "image", "width": 2200, "dest": "smart/assets/facade.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172009_a3ba2753-a6d6-43fe-a0a8-3908f36ba8a4.png" },
+  { "type": "video", "dest": "smart/assets/facade.mp4",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172116_fe75f9d5-3916-4b18-a8cd-ad29ae7a5931.mp4" },
+  { "type": "image", "width": 1200, "dest": "smart/assets/ues.jpg",      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172010_014daf96-aead-42e0-bd1b-7dde67f8d1e3.png" },
+  { "type": "image", "width": 1200, "dest": "smart/assets/railroad.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172039_4a59b011-09ef-4ace-9b71-fe9e5de23be1.png" },
+  { "type": "image", "width": 1200, "dest": "smart/assets/bedstuy.jpg",  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172013_35024d2c-6a3b-4956-af32-b6d98dfe2c9d.png" },
+  { "type": "image", "width": 1200, "dest": "smart/assets/camera.jpg",   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172048_358ea487-3086-4ca4-884c-d6e89362923d.png" },
+  { "type": "image", "width": 1200, "dest": "smart/assets/intercom.jpg", "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172050_349dce3c-a3d2-4e12-a042-82d979726b8d.png" },
+  { "type": "image", "width": 1600, "dest": "smart/assets/lobby.jpg",    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172059_7e6b406d-ead3-47e0-8cad-a1b493676ba4.png" },
+  { "type": "image", "width": 1200, "dest": "smart/assets/rack.jpg",     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GIIx6mbJRwiEZXFK5p7XrUQ6aR/hf_20260710_172440_5d0ee292-d4e7-4f8e-8bfa-578a3d8eabb8.png" }
 ]

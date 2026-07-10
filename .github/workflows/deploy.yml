@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name "asset-fetcher[bot]"
           git config user.email "actions@github.com"
-          git add -A current/assets signal/assets atelier/assets maison/assets dusk/assets sanctum/assets
+          git add -A current/assets signal/assets atelier/assets maison/assets dusk/assets sanctum/assets smart/assets
           if ! git diff --cached --quiet; then
             git commit -m "Add optimized generated media assets"
             git push origin claude/fable-showcase-websites-run1r4
@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/ 2>/dev/null || true
-          cp -r current signal atelier maison dusk sanctum _site/
+          cp -r current signal atelier maison dusk sanctum smart _site/
           touch _site/.nojekyll
       - name: Publish to gh-pages branch
         run: |

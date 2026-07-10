@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How the Real Homepage Was Remade</title>
+<meta name="description" content="How Smart Installers' actual homepage copy was re-set in the Atelier design system by Claude (Fable 5): real content, dusk photography, sticky project chapters, and an integration dial.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23EDE7DC'/%3E%3Cpath d='M20 44 V26 l12-8 12 8 v18' fill='none' stroke='%232A211B' stroke-width='2.4'/%3E%3Ccircle cx='32' cy='36' r='3.2' fill='%23B98A4A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .veil { display: none; }
+  .guide { max-width: 780px; margin: 0 auto; padding: 120px var(--gutter) 100px; }
+  .guide__kicker { color: var(--amber); font-size: 20px; display: block; margin-bottom: 14px; }
+  .guide h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 6vw, 70px); line-height: 1.04; letter-spacing: 0.03em; margin-bottom: 20px; }
+  .guide__intro { color: var(--espresso-soft); font-size: 17px; margin-bottom: 54px; }
+  .guide h2 { font-family: var(--display); font-weight: 400; font-size: clamp(23px, 3.2vw, 34px); letter-spacing: 0.03em; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+  .guide h2 .n { font-family: var(--serif); font-style: italic; color: var(--amber); font-size: 0.74em; margin-right: 12px; }
+  .guide p, .guide li { color: var(--espresso-soft); margin-bottom: 13px; }
+  .guide strong { color: var(--espresso); font-weight: 500; }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 14px; }
+  .guide code { font-family: ui-monospace, monospace; font-size: 13px; background: var(--bone-deep); border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 6px; }
+  .guide__back { color: var(--amber); text-decoration: none; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .guide__back:hover { color: var(--espresso); }
+</style>
+</head>
+<body>
+  <header class="bar is-scrolled">
+    <a class="bar__brand" href="../index.html"><span class="bar__mark" aria-hidden="true"></span>SMART INSTALLERS <span style="font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0.02em; font-size: 14px; color: var(--espresso-soft);">/guide</span></a>
+    <nav class="bar__nav"><a class="bar__cta" href="../index.html">Back to the site</a></nav>
+  </header>
+
+  <main class="guide">
+    <span class="guide__kicker serif-i">The making-of, told plainly</span>
+    <h1>The real homepage, re-set in Atelier</h1>
+    <p class="guide__intro">
+      This page took Smart Installers' <strong>actual website copy</strong> — headline, services,
+      featured projects, client list, stats, phone number, service areas — and re-set every word
+      in the <a class="guide__back" href="../../atelier/index.html">Atelier</a> design system.
+      Nothing about the business was invented; everything about the presentation was. Built
+      autonomously by <strong>Claude (Fable 5)</strong>.
+    </p>
+
+    <h2><span class="n">i.</span>Same words, different temperature</h2>
+    <p>The original homepage says it with a corporate blue hero and card grids. The redesign says
+      the identical things — "Security &amp; Automation, Precision Engineered," the six services
+      verbatim, the three real projects, the Fortune 500 client names — but at dusk, in bone and
+      espresso, with candle-amber reserved for what matters. The claim "precision engineered"
+      stops being a slogan and becomes the visual standard the page itself has to meet.</p>
+
+    <h2><span class="n">ii.</span>Photography brief: New York at dusk</h2>
+    <p>Every image was generated with Higgsfield's image model to one brief — the Atelier lighting
+      law applied to the company's real subject matter: a prewar facade with windows warming
+      (animated into the hero cinemagraph with Kling 3.0 Turbo), an Upper East Side limestone
+      condo, a Maspeth commercial entrance, a Bed-Stuy brownstone, a discreet dome camera on a
+      limestone corner, a brass video intercom, a lobby access reader, a perfectly dressed rack in
+      amber light. Security photographed as architecture, not as hardware.</p>
+
+    <h2><span class="n">iii.</span>The set pieces, repurposed</h2>
+    <ul>
+      <li><strong>Sticky project lens.</strong> Atelier's room chapters became the Featured Projects:
+        the photograph crossfades between the three real installations as their stories scroll past,
+        each closing on its true one-line spec (Upper East Side · Condo · In Progress).</li>
+      <li><strong>The dial became the platform demo.</strong> The company's own sentence — "security,
+        access, audio, and automation unified under one intelligent platform" — is now a working
+        interaction: Arrive / Entertain / Secure / Goodnight re-light the lobby photograph live.</li>
+      <li><strong>The 500+ counter</strong> rolls up in Cormorant numerals inside the dark Why-Us band,
+        with the three real differentiators set as engraved rows.</li>
+      <li><strong>Trust, letterspaced.</strong> Amazon, NYU Langone, Chipotle, Primark, H&amp;M, Uniqlo
+        and Northwell Health appear as an Italiana specimen row rather than a logo soup.</li>
+    </ul>
+
+    <h2><span class="n">iv.</span>The stack</h2>
+    <ul>
+      <li>Hand-written static HTML — no framework, no build step. GSAP + ScrollTrigger + SplitText, Lenis smooth scroll, all self-hosted.</li>
+      <li>Italiana / Cormorant Garamond / Karla, self-hosted woff2.</li>
+      <li>All motion collapses politely under <code>prefers-reduced-motion</code>.</li>
+      <li>Deploys anywhere static files go: GitHub Pages today, Netlify with <code>netlify deploy --prod --dir smart</code>.</li>
+    </ul>
+
+    <h2><span class="n">v.</span>If you are redesigning your own site</h2>
+    <ol>
+      <li>Freeze the copy first. Rewriting words and design at once is how brands drift.</li>
+      <li>Pick one lighting brief and regenerate every image with it — the photography carries the palette.</li>
+      <li>Turn your strongest claim into an interaction (ours: "one intelligent platform" became the dial).</li>
+      <li>Keep the phone number, the service areas, the real projects. Specificity is what luxury design usually throws away — keeping it is the trick.</li>
+    </ol>
+
+    <p style="margin-top: 48px;">
+      <a class="guide__back" href="../index.html">← Back to the homepage</a><br><br>
+      <a class="guide__back" href="../../atelier/index.html">The design system it came from: Atelier →</a>
+    </p>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__base" style="border: none; padding-top: 0;">
+      <span>SMART INSTALLERS — concept redesign</span>
+      <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+    </div>
+  </footer>
+</body>
+</html>
