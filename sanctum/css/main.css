@@ -438,7 +438,8 @@ body::after {
   .hero__foot span:first-child, .hero__foot span:last-child { display: none; }
 }
 @media (max-width: 600px) {
-  .hero__title { font-size: clamp(36px, 13vw, 56px); letter-spacing: 0.14em; text-indent: 0.14em; }
+  .hero__title { font-size: clamp(28px, 10vw, 44px); letter-spacing: 0.1em; text-indent: 0.1em; }
+  .bar__by { display: none; }
 }
 
 /* ---------- reduced motion ---------- */

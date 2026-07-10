@@ -400,6 +400,9 @@ body {
 .foot a:hover { color: var(--fg); }
 
 /* ---------- responsive ---------- */
+@media (max-width: 600px) {
+  .bar__by { display: none; }
+}
 @media (max-width: 920px) {
   .bar__nav a:not(.bar__cta) { display: none; }
   .rail { display: none; }
