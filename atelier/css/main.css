@@ -524,6 +524,13 @@ body {
 .foot a:hover { color: var(--bone); }
 
 /* ---------- responsive ---------- */
+@media (max-width: 600px) {
+  .hero__title {
+    font-size: clamp(38px, 14.5vw, 60px);
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
+  }
+}
 @media (max-width: 920px) {
   .bar__nav a:not(.bar__cta) { display: none; }
   .rooms { grid-template-columns: 1fr; }

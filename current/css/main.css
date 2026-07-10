@@ -325,7 +325,7 @@ body::after {
 .hero__title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(46px, 9.5vw, 148px);
+  font-size: clamp(33px, 9.5vw, 148px);
   line-height: 0.94;
   letter-spacing: -0.015em;
   text-transform: uppercase;
@@ -686,7 +686,7 @@ body::after {
 .cta__title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(56px, 12vw, 190px);
+  font-size: clamp(42px, 12vw, 190px);
   line-height: 0.95;
   letter-spacing: -0.015em;
 }
