@@ -43,9 +43,6 @@ jobs:
   deploy:
     needs: assets
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -56,11 +53,14 @@ jobs:
           cp index.html _site/ 2>/dev/null || true
           cp -r current signal atelier _site/
           touch _site/.nojekyll
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish to gh-pages branch
+        run: |
+          cd _site
+          git init -b gh-pages
+          git config user.name "pages-deployer[bot]"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Deploy static showcase"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

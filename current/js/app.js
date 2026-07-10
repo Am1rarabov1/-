@@ -86,13 +86,14 @@ function initGL() {
         float core = 0.0016 / (d + 0.0016);
         float halo = 0.014 / (d + 0.028);
 
-        // travelling pulse along x
-        float pp = fract(uv.x * 0.7 - uTime * pulseRate + seed);
-        float pulse = exp(-pp * pp * 260.0) * 2.4;
-        float pulseGlow = (core * 1.6 + halo) * pulse;
+        // travelling pulse along x: centered packet so both edges fade smoothly,
+        // gated by distance so it never washes a full column
+        float pp = fract(uv.x * 0.7 - uTime * pulseRate + seed) - 0.5;
+        float packet = exp(-pp * pp * 240.0);
+        float pulseGlow = (core * 1.8 + exp(-d * d * 900.0) * 0.5) * packet;
 
         float lum = core * 0.9 + halo * 0.34;
-        vec3 col = tint * lum + vec3(0.92, 0.95, 1.0) * pulseGlow * 0.65;
+        vec3 col = tint * lum + vec3(0.92, 0.95, 1.0) * pulseGlow * 0.9;
         return col;
       }
 

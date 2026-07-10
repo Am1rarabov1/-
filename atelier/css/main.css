@@ -123,6 +123,14 @@ body {
   box-shadow: 0 1px 0 var(--hairline);
   padding: 14px var(--gutter);
 }
+/* over the hero photograph the bar runs light */
+.bar:not(.is-scrolled) .bar__brand,
+.bar:not(.is-scrolled) .bar__by { color: var(--bone); }
+.bar:not(.is-scrolled) .bar__by { color: rgba(237, 231, 220, 0.8); }
+.bar:not(.is-scrolled) .bar__nav a { color: rgba(237, 231, 220, 0.85); text-shadow: 0 1px 12px rgba(20, 14, 10, 0.45); }
+.bar:not(.is-scrolled) .bar__nav a:hover { color: #fff; }
+.bar:not(.is-scrolled) .bar__cta { border-color: rgba(237, 231, 220, 0.75); color: var(--bone) !important; }
+.bar:not(.is-scrolled) .bar__cta:hover { background: var(--bone); color: var(--espresso) !important; }
 .bar__brand {
   display: flex;
   align-items: baseline;

@@ -365,7 +365,7 @@ em { font-family: var(--serif); font-style: italic; }
   gap: clamp(20px, 3vw, 44px);
 }
 .note { display: flex; flex-direction: column; gap: 12px; }
-.note--wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 12px 40px; align-items: end; }
+.note--wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 12px 48px; align-items: center; align-content: center; }
 .note--wide .halftone { grid-row: 1 / 4; }
 .note__title {
   font-family: var(--serif);

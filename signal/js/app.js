@@ -83,17 +83,18 @@
   });
   gsap.to('#houseSvg .sch-house .draw', {
     strokeDashoffset: 0,
-    duration: 1,
-    stagger: 0.25,
+    duration: 1.4,
+    stagger: 0.3,
     ease: 'power2.inOut',
-    scrollTrigger: { trigger: '#houseSvg', start: 'top 78%', end: 'top 30%', scrub: 0.6 },
+    scrollTrigger: { trigger: '#houseSvg', start: 'top 74%', once: true },
   });
   gsap.to('#houseSvg .sch-runs .draw', {
     strokeDashoffset: 0,
-    duration: 1,
-    stagger: 0.3,
+    duration: 1.1,
+    stagger: 0.32,
+    delay: 0.9,
     ease: 'power2.inOut',
-    scrollTrigger: { trigger: '#houseSvg', start: 'top 55%', end: 'top 8%', scrub: 0.6 },
+    scrollTrigger: { trigger: '#houseSvg', start: 'top 74%', once: true },
   });
   gsap.from('.sch-nodes .node, .sch-nodes text', {
     scale: 0,
@@ -101,8 +102,9 @@
     opacity: 0,
     stagger: 0.06,
     duration: 0.5,
+    delay: 2.2,
     ease: 'back.out(2)',
-    scrollTrigger: { trigger: '#houseSvg', start: 'top 30%', once: true },
+    scrollTrigger: { trigger: '#houseSvg', start: 'top 74%', once: true },
   });
 
   /* travelling pulses along two runs, once schematic is on screen */
@@ -128,11 +130,11 @@
   }
   ScrollTrigger.create({
     trigger: '#houseSvg',
-    start: 'top 30%',
+    start: 'top 74%',
     once: true,
     onEnter: () => {
-      animatePulse(document.getElementById('pulse1'), runA, 2.4, 0);
-      animatePulse(document.getElementById('pulse2'), runB, 2.0, 0.9);
+      animatePulse(document.getElementById('pulse1'), runA, 2.4, 2.6);
+      animatePulse(document.getElementById('pulse2'), runB, 2.0, 3.2);
     },
   });
 
