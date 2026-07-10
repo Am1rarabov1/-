@@ -187,10 +187,12 @@
 
   /* ---------- commission: arch morph + inner parallax ---------- */
   const arch = document.getElementById('commissionArch');
-  gsap.fromTo(arch, { borderRadius: '2px 2px 2px 2px' }, {
+  gsap.fromTo(arch, { borderRadius: '2px 2px 2px 2px', scale: 0.94 }, {
     borderRadius: '45vw 45vw 2px 2px',
-    ease: 'none',
-    scrollTrigger: { trigger: '.commission', start: 'top 90%', end: 'top 30%', scrub: 0.6 },
+    scale: 1,
+    duration: 1.6,
+    ease: 'power3.inOut',
+    scrollTrigger: { trigger: arch, start: 'top 85%', once: true },
   });
   gsap.fromTo(arch.querySelector('img'), { y: '-12%' }, {
     y: '0%', ease: 'none',
@@ -202,4 +204,7 @@
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
     });
   });
+
+  /* late media (video metadata, images) shifts layout — recompute triggers */
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 })();

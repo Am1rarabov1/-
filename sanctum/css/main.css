@@ -182,10 +182,11 @@ body::after {
 .hero__title {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(50px, 12.5vw, 190px);
+  font-size: clamp(44px, 10vw, 152px);
   line-height: 1;
-  letter-spacing: 0.2em;
-  text-indent: 0.2em;
+  letter-spacing: 0.16em;
+  text-indent: 0.16em;
+  white-space: nowrap;
   color: var(--cream);
   text-shadow: 0 2px 44px rgba(12, 8, 6, 0.65);
 }

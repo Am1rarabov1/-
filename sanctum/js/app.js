@@ -126,4 +126,7 @@
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
     });
   });
+
+  /* late media (video metadata, images) shifts layout — recompute triggers */
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
