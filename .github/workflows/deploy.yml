@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/ 2>/dev/null || true
-          cp -r current signal atelier _site/
+          cp -r current signal atelier maison dusk sanctum _site/
           touch _site/.nojekyll
       - name: Publish to gh-pages branch
         run: |

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dusk — Smart Installers | The Hour Between</title>
+<meta name="description" content="Dusk is one evening in a house tuned by Smart Installers: from golden hour to midnight, every light, shade and note arriving exactly on time.">
+<meta property="og:title" content="Dusk — by Smart Installers">
+<meta property="og:description" content="One evening, perfectly installed. Scroll from 17:42 to 23:58.">
+<meta property="og:image" content="https://am1rarabov1.github.io/-/dusk/assets/golden.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231A1622'/%3E%3Ccircle cx='32' cy='40' r='14' fill='%23E5B96F'/%3E%3Crect x='10' y='40' width='44' height='16' fill='%231A1622'/%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <!-- veil: setting sun -->
+  <div class="veil" id="veil" aria-hidden="true">
+    <span class="veil__sun" id="veilSun"></span>
+    <span class="veil__word">DUSK</span>
+  </div>
+
+  <header class="bar" id="bar">
+    <a class="bar__brand" href="#top">
+      <span class="bar__disc" aria-hidden="true"></span>
+      DUSK
+      <span class="bar__by serif-i">by Smart Installers</span>
+    </a>
+    <nav class="bar__nav" aria-label="Primary">
+      <a href="#c1742">17:42</a>
+      <a href="#c1906">19:06</a>
+      <a href="#c2130">21:30</a>
+      <a href="#c2358">23:58</a>
+      <a href="./guide/index.html">Guide</a>
+      <a class="bar__cta" href="#begin">Begin</a>
+    </nav>
+  </header>
+
+  <!-- fixed evening clock rail -->
+  <aside class="rail" aria-hidden="true">
+    <span class="rail__time serif-i" id="railTime">17:42</span>
+    <span class="rail__line"><span class="rail__fill" id="railFill"></span></span>
+    <span class="rail__label">the hour between</span>
+  </aside>
+
+  <main id="top">
+
+    <!-- HERO: golden hour -->
+    <section class="hero">
+      <figure class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline poster="./assets/golden.jpg" preload="metadata">
+          <source src="./assets/golden.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow serif-i">Smart Installers presents one evening, perfectly installed</p>
+        <h1 class="hero__title">The hour<br><em class="serif-i">between</em></h1>
+        <p class="hero__line">Scroll from golden hour to midnight. The house will keep up.</p>
+      </div>
+      <div class="hero__foot" aria-hidden="true">
+        <span>Lighting · Shade · Sound · Sleep</span>
+        <span class="hero__scroll">17:42<span class="hero__scroll-line"></span></span>
+        <span>Sunset is an instrument</span>
+      </div>
+    </section>
+
+    <!-- CHAPTER 17:42 -->
+    <section class="chapter" id="c1742" data-time-from="1062" data-time-to="1146" data-phase="golden">
+      <span class="chapter__ghost serif-i" aria-hidden="true">17:42</span>
+      <div class="chapter__inner">
+        <figure class="chapter__media">
+          <img src="./assets/golden.jpg" alt="A living room flooded with low golden-hour sunlight">
+        </figure>
+        <div class="chapter__text">
+          <span class="chapter__time serif-i">17:42</span>
+          <h2 class="chapter__title">The sun does<br>its last work</h2>
+          <p class="chapter__body">Shades rise a final few degrees to let the low light in. Nothing electric competes with it; the house knows better than to interrupt a sunset.</p>
+          <span class="chapter__spec">Solar-tracked shades · Daylight-first scenes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 19:06 -->
+    <section class="chapter chapter--flip" id="c1906" data-time-from="1146" data-time-to="1290" data-phase="blue">
+      <span class="chapter__ghost serif-i" aria-hidden="true">19:06</span>
+      <div class="chapter__inner">
+        <figure class="chapter__media">
+          <img src="./assets/blue.jpg" alt="The living room at blue hour with lamps just switched on">
+        </figure>
+        <div class="chapter__text">
+          <span class="chapter__time serif-i">19:06</span>
+          <h2 class="chapter__title">The lamps<br>take over</h2>
+          <p class="chapter__body">As the sky turns cobalt, every lamp in the house rises to meet it over four unhurried minutes. Nobody touched anything. Nobody ever does.</p>
+          <span class="chapter__spec">Circadian handover · Four-minute fades</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 21:30 -->
+    <section class="chapter" id="c2130" data-time-from="1290" data-time-to="1438" data-phase="night">
+      <span class="chapter__ghost serif-i" aria-hidden="true">21:30</span>
+      <div class="chapter__inner">
+        <figure class="chapter__media">
+          <img src="./assets/wine.jpg" alt="A dark kitchen at night, one pendant glowing over two glasses of wine">
+        </figure>
+        <div class="chapter__text">
+          <span class="chapter__time serif-i">21:30</span>
+          <h2 class="chapter__title">The house<br>leans closer</h2>
+          <p class="chapter__body">One pendant, two glasses, and the playlist at conversation level. Every other room has already gone quietly to sleep behind you.</p>
+          <span class="chapter__spec">Zone retreat · Speech-level audio · Candle scenes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 23:58 -->
+    <section class="chapter chapter--flip" id="c2358" data-time-from="1438" data-time-to="1438" data-phase="midnight">
+      <span class="chapter__ghost serif-i" aria-hidden="true">23:58</span>
+      <div class="chapter__inner">
+        <figure class="chapter__media">
+          <img src="./assets/midnight.jpg" alt="A bedroom at midnight with a strip of moonlight and one tiny amber night light">
+        </figure>
+        <div class="chapter__text">
+          <span class="chapter__time serif-i">23:58</span>
+          <h2 class="chapter__title">The house<br>exhales</h2>
+          <p class="chapter__body">One touch by the bed. Sixty seconds of fading light, doors confirming themselves, shades sealing the dark. The last thing you hear is nothing.</p>
+          <span class="chapter__spec">Goodnight ritual · Confirmed locks · True dark</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STARS / CLOSE -->
+    <section class="close" id="begin">
+      <div class="close__stars" id="stars" aria-hidden="true"></div>
+      <figure class="close__media">
+        <img src="./assets/lastlight.jpg" alt="A house silhouette at the very last light, one warm window glowing">
+      </figure>
+      <div class="close__body">
+        <p class="close__kicker serif-i">And tomorrow, again, without a thought</p>
+        <h2 class="close__title">Let us tune<br>your <em class="serif-i">evening</em></h2>
+        <a class="close__link" href="mailto:hello@smartinstallers.com">hello@smartinstallers.com<span aria-hidden="true"></span></a>
+        <p class="close__note">One visit at golden hour. We will take it from there.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>DUSK — an evening by Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+    <a href="./guide/index.html">How this site was made →</a>
+  </footer>
+
+  <script src="./vendor/gsap.min.js"></script>
+  <script src="./vendor/ScrollTrigger.min.js"></script>
+  <script src="./vendor/SplitText.min.js"></script>
+  <script src="./vendor/lenis.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

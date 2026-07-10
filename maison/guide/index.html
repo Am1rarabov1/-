@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How Maison Was Made</title>
+<meta name="description" content="How this dusk house-tour site was built by Claude (Fable 5): pinned mask-wipe room transitions, a double-door opening, parallax numerals, and the recipe to repeat it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23F2EDE4'/%3E%3Cpath d='M18 52 V30 a14 14 0 0 1 28 0 V52 Z' fill='none' stroke='%23201913' stroke-width='2.4'/%3E%3Ccircle cx='32' cy='34' r='3' fill='%23B98A4A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .veil { display: none; }
+  .guide { max-width: 780px; margin: 0 auto; padding: 120px var(--gutter) 100px; }
+  .guide__kicker { color: var(--brass); font-size: 20px; display: block; margin-bottom: 14px; }
+  .guide h1 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 6.2vw, 72px); line-height: 1.04; letter-spacing: 0.03em; margin-bottom: 20px; }
+  .guide__intro { color: var(--ink-soft); font-size: 17px; margin-bottom: 54px; }
+  .guide h2 { font-family: var(--display); font-weight: 400; font-size: clamp(23px, 3.2vw, 34px); letter-spacing: 0.03em; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+  .guide h2 .n { font-family: var(--serif); font-style: italic; color: var(--brass); font-size: 0.74em; margin-right: 12px; }
+  .guide p, .guide li { color: var(--ink-soft); margin-bottom: 13px; }
+  .guide strong { color: var(--ink); font-weight: 500; }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 14px; }
+  .guide code { font-family: ui-monospace, monospace; font-size: 13px; background: var(--porcelain-deep); border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 6px; }
+  .guide__back { color: var(--brass); text-decoration: none; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .guide__back:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+  <header class="bar is-scrolled">
+    <a class="bar__brand" href="../index.html">MAISON<span class="bar__by serif-i">/guide</span></a>
+    <nav class="bar__nav"><a class="bar__cta" href="../index.html">Back to the tour</a></nav>
+  </header>
+
+  <main class="guide">
+    <span class="guide__kicker serif-i">The making-of, told plainly</span>
+    <h1>How Maison was made</h1>
+    <p class="guide__intro">
+      Maison is part of the Atelier Collection — three sister sites to
+      <a class="guide__back" href="../../atelier/index.html">Atelier</a> built by
+      <strong>Claude (Fable 5)</strong>, each keeping the dusk-photography soul while pushing
+      the scroll choreography much further. Maison's idea: <strong>the website is a walking
+      tour of a house</strong>, and scrolling is your feet.
+    </p>
+
+    <h2><span class="n">i.</span>The doors open</h2>
+    <p>The site begins behind a pair of porcelain panels that part like double doors — a brass
+      rule draws, MAISON tightens its letterspacing, and the veil splits with
+      <code>xPercent: ±101</code> and a heavy <code>power4.inOut</code>. First impressions are
+      architectural on purpose: you enter this site the way you enter a house.</p>
+
+    <h2><span class="n">ii.</span>The tour: one pin, three mask wipes</h2>
+    <p>The centerpiece is a full-viewport section pinned for 340% of scroll while four rooms
+      exchange places, each with a different <strong>clip-path wipe</strong>:</p>
+    <ul>
+      <li><strong>Circle iris</strong> into the library — <code>circle(0% → 75%)</code>, like an eye adjusting.</li>
+      <li><strong>Vertical blind sweep</strong> into the bath — <code>inset(0 100% 0 0 → 0 0 0 0)</code>.</li>
+      <li><strong>Arch reveal</strong> into the dining room — an inset with a huge top
+        <code>border-radius</code> that rises like a doorway, then relaxes to full-bleed.</li>
+    </ul>
+    <p>Every room image also runs a slow continuous zoom (<code>scale 1.12 → 1</code>) across the
+      whole pin, so nothing on screen is ever perfectly still. A glass caption panel rewrites
+      itself per room and side-dots track the sequence.</p>
+
+    <h2><span class="n">iii.</span>Everything else that moves</h2>
+    <ul>
+      <li>An intent paragraph that rises <strong>line by line</strong> from masked containers (SplitText lines), beside a brass rule that draws itself.</li>
+      <li>A drifting italic marquee whose speed follows <strong>scroll velocity</strong>.</li>
+      <li>Detail cards on <strong>three different parallax speeds</strong> (<code>data-speed</code>), so the grid breathes as you pass.</li>
+      <li>Counters with drifting numerals in the dark "In Measure" band.</li>
+      <li>A finale image whose frame <strong>morphs from rectangle to arch</strong> on scroll while the photo counter-parallaxes inside it.</li>
+      <li>A brass progress hairline across the very top of the page.</li>
+    </ul>
+
+    <h2><span class="n">iv.</span>The stack &amp; the recipe</h2>
+    <ul>
+      <li>Static HTML, GSAP 3 + ScrollTrigger + SplitText, Lenis. No frameworks, no build.</li>
+      <li>Marcellus for engraved display caps, Cormorant italic for the voice, Karla for body.</li>
+      <li>Photography and the hero cinemagraph generated with Higgsfield (nano banana pro + Kling 3.0 Turbo), all to one dusk lighting brief.</li>
+      <li>To repeat: pick a physical journey (a tour), pin one stage, and give each transition its own mask. Variety lives in the wipes, not in the easing — the easing stays calm everywhere.</li>
+      <li>Everything degrades to a clean static read under <code>prefers-reduced-motion</code>.</li>
+    </ul>
+
+    <p style="margin-top: 48px;">
+      <a class="guide__back" href="../index.html">← Back to Maison</a><br><br>
+      <a class="guide__back" href="../../dusk/index.html">Next in the collection: Dusk →</a>
+    </p>
+  </main>
+
+  <footer class="foot">
+    <span>MAISON — by Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How Sanctum Was Made</title>
+<meta name="description" content="How this private-cinema site was built by Claude (Fable 5): a curtain-part hero video, a scroll-zoom through the screen, curtain-wipe reveals, a scrubbed credits roll — and the recipe to repeat it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23171210'/%3E%3Crect x='14' y='20' width='36' height='22' rx='2' fill='%23D9A85C'/%3E%3Cpath d='M14 46 h36' stroke='%23D9A85C' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .veil { display: none; }
+  .guide { max-width: 780px; margin: 0 auto; padding: 120px var(--gutter) 100px; }
+  .guide__kicker { color: var(--gold-soft); font-size: 20px; display: block; margin-bottom: 14px; }
+  .guide h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5.8vw, 66px); line-height: 1.06; letter-spacing: 0.03em; margin-bottom: 20px; }
+  .guide__intro { color: var(--cream-soft); font-size: 17px; margin-bottom: 54px; }
+  .guide h2 { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 3vw, 32px); letter-spacing: 0.03em; margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+  .guide h2 .n { font-family: var(--serif); font-style: italic; color: var(--gold-soft); font-size: 0.76em; margin-right: 12px; }
+  .guide p, .guide li { color: var(--cream-soft); margin-bottom: 13px; }
+  .guide strong { color: var(--cream); font-weight: 500; }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 14px; }
+  .guide code { font-family: ui-monospace, monospace; font-size: 13px; background: var(--velvet); border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 6px; }
+  .guide__back { color: var(--gold-soft); text-decoration: none; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .guide__back:hover { color: var(--cream); }
+</style>
+</head>
+<body>
+  <header class="bar is-scrolled">
+    <a class="bar__brand" href="../index.html"><span class="bar__tick" aria-hidden="true"></span>SANCTUM<span class="bar__by serif-i">/guide</span></a>
+    <nav class="bar__nav"><a class="bar__cta" href="../index.html">Back to the cinema</a></nav>
+  </header>
+
+  <main class="guide">
+    <span class="guide__kicker serif-i">The making-of, told plainly</span>
+    <h1>How Sanctum was made</h1>
+    <p class="guide__intro">
+      Sanctum closes the Atelier Collection — sister sites to
+      <a class="guide__back" href="../../atelier/index.html">Atelier</a> built autonomously by
+      <strong>Claude (Fable 5)</strong>. The conceit: <strong>the website behaves like a night at
+      the movies</strong> — title card, curtains, the walk to your seat, and end credits.</p>
+
+    <h2><span class="n">i.</span>Curtains that actually part</h2>
+    <p>The hero is a photograph of closed velvet curtains handed to <strong>Kling 3.0 Turbo</strong>
+      with the prompt "the curtains part very slowly, revealing a glowing golden light."
+      The resulting five-second clip loops as the hero video, so the site opens with a real
+      curtain-rise, every visit. Before it, a black title card — "A SMART INSTALLERS
+      PRODUCTION" — sets the register in eleven letterspaced words.</p>
+
+    <h2><span class="n">ii.</span>Scrolling through the screen</h2>
+    <p>The signature scroll piece: a pinned viewport where the cinema photograph
+      <strong>scales from 1× to 3.1×</strong> with its transform-origin on the screen itself.
+      As you scroll you physically approach the glow; brightness rises, the caption retires,
+      and at the threshold the shot <strong>crossfades into the projector beam</strong> — you
+      have passed through the screen into the light. One timeline, five tweens, huge effect.</p>
+
+    <h2><span class="n">iii.</span>Theatrical furniture</h2>
+    <ul>
+      <li><strong>Curtain wipes</strong> — every feature image reveals from its centerline outward
+        (<code>inset(0 50% 0 50%) → inset(0 0 0 0)</code>), the same move as the hero curtains.</li>
+      <li><strong>A scrubbed credits roll</strong> — a pinned section where end credits
+        (LIGHTING DESIGN — Smart Installers… STARRING — Your Family) roll bottom-to-top under
+        your scroll control, with cinematic fade masks top and bottom.</li>
+      <li><strong>NOW SHOWING marquee</strong> in Prata, speed tied to scroll velocity.</li>
+      <li>A permanent candlelight vignette over the whole page, and gold reserved strictly for
+        light sources: text glows only where the room would.</li>
+    </ul>
+
+    <h2><span class="n">iv.</span>The stack &amp; the recipe</h2>
+    <ul>
+      <li>Static HTML, GSAP + ScrollTrigger, Lenis. Prata display, Cormorant italic voice, Karla body. All self-hosted.</li>
+      <li>Photography generated with Higgsfield to one candle-lit brief; hero animated with Kling.</li>
+      <li>To repeat: borrow a ritual everyone already knows (a night at the cinema) and translate each beat into a scroll mechanic — arrival, reveal, immersion, credits. The structure writes the animation list for you.</li>
+      <li>Reduced-motion visitors get a fully static, readable cut.</li>
+    </ul>
+
+    <p style="margin-top: 48px;">
+      <a class="guide__back" href="../index.html">← Back to Sanctum</a><br><br>
+      <a class="guide__back" href="../../maison/index.html">First in the collection: Maison →</a>
+    </p>
+  </main>
+
+  <footer class="foot">
+    <span>SANCTUM — by Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+  </footer>
+</body>
+</html>

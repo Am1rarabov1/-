@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanctum — Smart Installers | The House Cinema, Perfected</title>
+<meta name="description" content="Sanctum is the private cinema practice of Smart Installers: reference sound, curtain-quiet rooms, and light that behaves like an usher.">
+<meta property="og:title" content="Sanctum — by Smart Installers">
+<meta property="og:description" content="The house cinema, perfected. Now seating.">
+<meta property="og:image" content="https://am1rarabov1.github.io/-/sanctum/assets/screen.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23171210'/%3E%3Crect x='14' y='20' width='36' height='22' rx='2' fill='%23D9A85C'/%3E%3Cpath d='M14 46 h36' stroke='%23D9A85C' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/prata-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <!-- veil: title card -->
+  <div class="veil" id="veil" aria-hidden="true">
+    <span class="veil__pre">A SMART INSTALLERS PRODUCTION</span>
+    <span class="veil__word">SANCTUM</span>
+    <span class="veil__post serif-i">now seating</span>
+  </div>
+
+  <header class="bar" id="bar">
+    <a class="bar__brand" href="#top">
+      <span class="bar__tick" aria-hidden="true"></span>
+      SANCTUM
+      <span class="bar__by serif-i">by Smart Installers</span>
+    </a>
+    <nav class="bar__nav" aria-label="Primary">
+      <a href="#inside">Step Inside</a>
+      <a href="#features">The Craft</a>
+      <a href="#credits">Credits</a>
+      <a href="./guide/index.html">Guide</a>
+      <a class="bar__cta" href="#booking">Book a screening</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO: curtains part -->
+    <section class="hero">
+      <figure class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline poster="./assets/curtain.jpg" preload="metadata">
+          <source src="./assets/curtain.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow">A SMART INSTALLERS PRODUCTION</p>
+        <h1 class="hero__title" aria-label="Sanctum">
+          <span>S</span><span>A</span><span>N</span><span>C</span><span>T</span><span>U</span><span>M</span>
+        </h1>
+        <p class="hero__line">The house cinema, <em class="serif-i">perfected</em>.</p>
+      </div>
+      <div class="hero__foot" aria-hidden="true">
+        <span>Reference sound · Curtain-quiet rooms</span>
+        <span class="hero__scroll">Scroll<span class="hero__scroll-line"></span></span>
+        <span>Light that behaves like an usher</span>
+      </div>
+    </section>
+
+    <!-- STEP INSIDE: scroll zooms into the screen -->
+    <section class="inside" id="inside">
+      <div class="inside__pin" id="insidePin">
+        <figure class="inside__room" id="insideRoom">
+          <img src="./assets/screen.jpg" alt="A private cinema with a glowing pale-gold screen and mohair seating">
+        </figure>
+        <figure class="inside__beam" id="insideBeam">
+          <img src="./assets/beam.jpg" alt="A projector beam cutting through haze in the dark">
+        </figure>
+        <div class="inside__caption" id="insideCaption">
+          <span class="inside__kicker serif-i">Scroll, and take your seat</span>
+          <h2 class="inside__title">Step into<br>the screen</h2>
+        </div>
+        <div class="inside__caption inside__caption--late" id="insideCaptionLate">
+          <span class="inside__kicker serif-i">Where the light becomes the room</span>
+          <h2 class="inside__title">Every seat is<br>the best seat</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES: curtain-wipe rows -->
+    <section class="features" id="features">
+      <h2 class="features__heading"><em class="serif-i">The</em> craft</h2>
+      <article class="feature">
+        <figure class="feature__media" data-wipe>
+          <img src="./assets/corridor.jpg" alt="A velvet corridor with glowing brass light boxes leading to the cinema" loading="lazy">
+        </figure>
+        <div class="feature__text">
+          <span class="feature__no serif-i">Act I</span>
+          <h3 class="feature__name">The Approach</h3>
+          <p class="feature__body">The corridor dims as you walk it, poster boxes glowing like a promise. By the final curtain your eyes are already adjusted, and the room receives you in half-light.</p>
+          <span class="feature__spec">PATH DIMMING · VELVET ACOUSTIC PANELS · BRASS FOOTLIGHTS</span>
+        </div>
+      </article>
+      <article class="feature feature--flip">
+        <figure class="feature__media" data-wipe>
+          <img src="./assets/seat.jpg" alt="A mohair armrest with a brass cupholder holding a coupe glass" loading="lazy">
+        </figure>
+        <div class="feature__text">
+          <span class="feature__no serif-i">Act II</span>
+          <h3 class="feature__name">The Seat</h3>
+          <p class="feature__body">Mohair that swallows echoes, brass that holds your glass, and a recline motor you will never hear. You come for the film and stay for the chair.</p>
+          <span class="feature__spec">SILENT RECLINE · TACTILE CONTROLS · ACOUSTIC UPHOLSTERY</span>
+        </div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media" data-wipe>
+          <img src="./assets/beam.jpg" alt="The projector beam in gentle haze" loading="lazy">
+        </figure>
+        <div class="feature__text">
+          <span class="feature__no serif-i">Act III</span>
+          <h3 class="feature__name">The Beam</h3>
+          <p class="feature__body">Reference projection calibrated to the room, sound tuned seat by seat, sconces that bow out as the studio logo appears. The house holds its breath with you.</p>
+          <span class="feature__spec">4K REFERENCE · SEAT-BY-SEAT EQ · SCENE-LINKED DIMMING</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="now" aria-hidden="true">
+      <div class="now__track" id="nowTrack">
+        <span class="now__item">NOW SHOWING&nbsp;&nbsp;·&nbsp;&nbsp;YOUR HOUSE, ONLY BETTER&nbsp;&nbsp;·&nbsp;&nbsp;ONE NIGHT ONLY, EVERY NIGHT&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span class="now__item">NOW SHOWING&nbsp;&nbsp;·&nbsp;&nbsp;YOUR HOUSE, ONLY BETTER&nbsp;&nbsp;·&nbsp;&nbsp;ONE NIGHT ONLY, EVERY NIGHT&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- CREDITS ROLL -->
+    <section class="credits" id="credits">
+      <div class="credits__pin" id="creditsPin">
+        <div class="credits__fade credits__fade--top" aria-hidden="true"></div>
+        <div class="credits__roll" id="creditsRoll">
+          <p class="credits__lead serif-i">end credits, rolling nightly</p>
+          <dl class="credits__list">
+            <div><dt>DIRECTED BY</dt><dd>The homeowner, nightly</dd></div>
+            <div><dt>LIGHTING DESIGN</dt><dd>Smart Installers</dd></div>
+            <div><dt>SOUND</dt><dd>Reference, tuned seat by seat</dd></div>
+            <div><dt>SET DECORATION</dt><dd>Velvet, mohair &amp; brass</dd></div>
+            <div><dt>PROJECTION</dt><dd>Calibrated 4K, hidden until needed</dd></div>
+            <div><dt>ACOUSTIC TREATMENT</dt><dd>Invisible, everywhere</dd></div>
+            <div><dt>AUTOMATION</dt><dd>One button, labeled nothing</dd></div>
+            <div><dt>CATERING</dt><dd>The kitchen, one scene away</dd></div>
+            <div><dt>STARRING</dt><dd>Your family</dd></div>
+          </dl>
+          <p class="credits__coda serif-i">no wires were visible in the making of this room</p>
+        </div>
+        <div class="credits__fade credits__fade--bottom" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="booking" id="booking">
+      <p class="booking__kicker serif-i">Private commissions, by appointment</p>
+      <h2 class="booking__title">Book a<br><em class="serif-i">screening</em></h2>
+      <a class="booking__btn" href="mailto:hello@smartinstallers.com"><span>Reserve your evening</span></a>
+      <p class="booking__note">We visit, we listen to the room, and we tell you what it could sound like.</p>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>SANCTUM — the cinema practice of Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+    <a href="./guide/index.html">How this site was made →</a>
+  </footer>
+
+  <script src="./vendor/gsap.min.js"></script>
+  <script src="./vendor/ScrollTrigger.min.js"></script>
+  <script src="./vendor/SplitText.min.js"></script>
+  <script src="./vendor/lenis.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
