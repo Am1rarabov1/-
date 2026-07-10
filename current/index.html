@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CURRENT — Smart Installers | The Invisible Nervous System</title>
+<meta name="description" content="Smart Installers designs and installs the low-voltage backbone of modern buildings. Data, security, automation, sound. CURRENT is the craft, made visible.">
+<meta property="og:title" content="CURRENT — Smart Installers">
+<meta property="og:description" content="The invisible nervous system of your building. Low voltage, high craft.">
+<meta property="og:image" content="https://am1rarabov1.github.io/-/current/assets/project-lobby.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050810'/%3E%3Cpath d='M36 8 L20 36 h10 L26 56 L46 26 h-11 z' fill='%232438ff'/%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body data-theme="current">
+
+  <!-- Preloader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__brand">
+      <span class="loader__glyph">⚡</span>
+      <span class="loader__word">CURRENT</span>
+    </div>
+    <div class="loader__meta">
+      <span class="loader__line" id="loaderLine"></span>
+      <span class="loader__pct mono" id="loaderPct">000</span>
+    </div>
+    <span class="loader__note mono">ESTABLISHING SIGNAL</span>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+    <div class="cursor__label mono" id="cursorLabel"></div>
+  </div>
+
+  <!-- Fixed chrome -->
+  <header class="chrome" id="chrome">
+    <a class="chrome__brand" href="#top" data-cursor="link">
+      <svg class="chrome__bolt" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true"><path d="M36 8 L20 36 h10 L26 56 L46 26 h-11 z" fill="currentColor"/></svg>
+      <span class="chrome__word">CURRENT</span>
+      <span class="chrome__by mono">by Smart Installers</span>
+    </a>
+    <nav class="chrome__nav" aria-label="Primary">
+      <a href="#philosophy" class="chrome__link mono" data-cursor="link">Philosophy</a>
+      <a href="#services" class="chrome__link mono" data-cursor="link">Services</a>
+      <a href="#work" class="chrome__link mono" data-cursor="link">Work</a>
+      <a href="#process" class="chrome__link mono" data-cursor="link">Process</a>
+      <a href="./guide/index.html" class="chrome__link chrome__link--guide mono" data-cursor="link">/guide</a>
+    </nav>
+    <a class="btn-pill" href="#contact" data-magnetic data-cursor="link">
+      <span class="btn-pill__text">Start a project</span>
+      <span class="btn-pill__fill" aria-hidden="true"></span>
+    </a>
+  </header>
+
+  <div class="hud hud--bl mono" aria-hidden="true">
+    <span class="hud__dot"></span> SYSTEM: LIVE
+  </div>
+  <div class="hud hud--br mono" aria-hidden="true" id="hudScroll">SCROLL 000%</div>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <canvas class="hero__gl" id="gl" aria-hidden="true"></canvas>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow mono reveal-line"><span>SMART INSTALLERS — LOW VOLTAGE DIVISION</span></p>
+        <h1 class="hero__title" id="heroTitle" aria-label="The invisible nervous system">
+          <span class="hero__row"><span class="hero__word">THE</span> <span class="hero__word hero__word--ghost">INVISIBLE</span></span>
+          <span class="hero__row"><span class="hero__word hero__word--accent">NERVOUS</span></span>
+          <span class="hero__row"><span class="hero__word">SYSTEM</span><span class="hero__punct">.</span></span>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__sub">We design and install the low-voltage backbone of modern buildings.
+            Data. Security. Automation. Sound. You never see our work &mdash; you feel it everywhere.</p>
+          <div class="hero__cue mono" aria-hidden="true">
+            <span class="hero__cue-track"><span class="hero__cue-thumb"></span></span>
+            SCROLL TO TRACE THE SIGNAL
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span class="marquee__item">LOW VOLTAGE <em>HIGH CRAFT</em> STRUCTURED CABLING <em>AUTOMATION</em> SURVEILLANCE <em>AUDIO</em> NETWORKS <em>&nbsp;</em></span>
+        <span class="marquee__item">LOW VOLTAGE <em>HIGH CRAFT</em> STRUCTURED CABLING <em>AUTOMATION</em> SURVEILLANCE <em>AUDIO</em> NETWORKS <em>&nbsp;</em></span>
+      </div>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy section" id="philosophy">
+      <div class="section__rail mono" aria-hidden="true">
+        <span class="section__index">01</span>
+        <span class="section__name">PHILOSOPHY</span>
+      </div>
+      <div class="philosophy__body">
+        <p class="philosophy__text" id="manifesto">Power <em>shouts</em>. Signal <em>whispers</em>. Behind every effortless room there are three hundred quiet decisions, a thousand feet of perfectly dressed cable, and one team that treats <em>millimeters</em> as a religion. We build the layer of your building that <em>thinks</em>.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+      <div class="section__rail mono" aria-hidden="true">
+        <span class="section__index">02</span>
+        <span class="section__name">SERVICES</span>
+      </div>
+      <h2 class="services__title">What we <span class="italic-accent">wire</span></h2>
+      <ul class="services__list" id="servicesList">
+        <li class="service" data-img="./assets/project-fiber.jpg">
+          <a class="service__row" href="#contact" data-cursor="view">
+            <span class="service__num mono">001</span>
+            <span class="service__name">Structured Cabling</span>
+            <span class="service__tag mono">CAT6A / FIBER / COAX</span>
+            <span class="service__arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="service__desc">The copper-and-glass skeleton every other system stands on. Certified runs, dressed to the millimeter, labeled like a library.</p>
+        </li>
+        <li class="service" data-img="./assets/project-lobby.jpg">
+          <a class="service__row" href="#contact" data-cursor="view">
+            <span class="service__num mono">002</span>
+            <span class="service__name">Home Automation</span>
+            <span class="service__tag mono">LIGHTING / CLIMATE / SHADES</span>
+            <span class="service__arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="service__desc">One quiet interface for light, warmth and shade. Scenes that follow the sun, rooms that anticipate you.</p>
+        </li>
+        <li class="service" data-img="./assets/project-rack.jpg">
+          <a class="service__row" href="#contact" data-cursor="view">
+            <span class="service__num mono">003</span>
+            <span class="service__name">Surveillance &amp; Access</span>
+            <span class="service__tag mono">CCTV / INTERCOM / ENTRY</span>
+            <span class="service__arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="service__desc">Cameras that see in the dark and doors that know your name. Security engineered to be felt as calm, not watched.</p>
+        </li>
+        <li class="service" data-img="./assets/project-cinema.jpg">
+          <a class="service__row" href="#contact" data-cursor="view">
+            <span class="service__num mono">004</span>
+            <span class="service__name">Audio &amp; Cinema</span>
+            <span class="service__tag mono">ATMOS / MULTIROOM / ACOUSTICS</span>
+            <span class="service__arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="service__desc">Reference-grade rooms and whole-home sound that disappears into the architecture until the first note.</p>
+        </li>
+        <li class="service" data-img="./assets/project-rack.jpg">
+          <a class="service__row" href="#contact" data-cursor="view">
+            <span class="service__num mono">005</span>
+            <span class="service__name">Enterprise Networking</span>
+            <span class="service__tag mono">WI-FI 7 / SWITCHING / RACKS</span>
+            <span class="service__arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="service__desc">Wireless that never drops a frame and racks tidy enough to photograph. Uptime as an aesthetic.</p>
+        </li>
+      </ul>
+      <div class="service-preview" id="servicePreview" aria-hidden="true">
+        <img id="servicePreviewImg" src="./assets/project-fiber.jpg" alt="">
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats section" id="grid">
+      <div class="section__rail mono" aria-hidden="true">
+        <span class="section__index">03</span>
+        <span class="section__name">THE GRID</span>
+      </div>
+      <svg class="stats__circuit" id="circuit" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+        <path class="stats__trace" d="M0,320 H240 L300,260 H520 L580,320 H820 L900,240 H1200" />
+        <path class="stats__trace" d="M0,120 H180 L260,200 H640 L700,140 H1000 L1060,200 H1200" />
+        <circle class="stats__node" cx="300" cy="260" r="5"/>
+        <circle class="stats__node" cx="700" cy="140" r="5"/>
+        <circle class="stats__node" cx="900" cy="240" r="5"/>
+      </svg>
+      <div class="stats__row">
+        <div class="stat">
+          <span class="stat__value"><span class="stat__num" data-count="214">0</span></span>
+          <span class="stat__label mono">PROJECTS DELIVERED</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value"><span class="stat__num" data-count="1.2" data-decimals="1">0</span>M</span>
+          <span class="stat__label mono">FEET OF CABLE PULLED</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value"><span class="stat__num" data-count="99.98" data-decimals="2">0</span>%</span>
+          <span class="stat__label mono">SYSTEM UPTIME</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value"><span class="stat__num" data-count="24">0</span>h</span>
+          <span class="stat__label mono">RESPONSE, ALWAYS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK: horizontal gallery -->
+    <section class="work" id="work">
+      <div class="work__pin" id="workPin">
+        <div class="work__head">
+          <div class="section__rail section__rail--inline mono" aria-hidden="true">
+            <span class="section__index">04</span>
+            <span class="section__name">SELECTED WORK</span>
+          </div>
+          <h2 class="work__title">Signal, <span class="italic-accent">installed</span></h2>
+          <span class="work__progress mono" id="workProgress">01 / 04</span>
+        </div>
+        <div class="work__track" id="workTrack">
+          <article class="card">
+            <figure class="card__media"><img src="./assets/project-lobby.jpg" alt="Dark building lobby traced by a single cobalt light line" loading="lazy"></figure>
+            <div class="card__meta">
+              <span class="card__num mono">P.01</span>
+              <h3 class="card__name">Meridian Tower Lobby</h3>
+              <p class="card__spec mono">4,800 FT ADDRESSABLE LED · CAT6A BACKBONE · ACCESS CONTROL</p>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__media"><img src="./assets/project-fiber.jpg" alt="Macro photograph of glowing fiber optic strands" loading="lazy"></figure>
+            <div class="card__meta">
+              <span class="card__num mono">P.02</span>
+              <h3 class="card__name">Campus Fiber Backbone</h3>
+              <p class="card__spec mono">48-STRAND OS2 · 12 BUILDINGS · 40G CORE</p>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__media"><img src="./assets/project-cinema.jpg" alt="Private cinema under a fiber optic star ceiling" loading="lazy"></figure>
+            <div class="card__meta">
+              <span class="card__num mono">P.03</span>
+              <h3 class="card__name">Hidden Hills Screening Room</h3>
+              <p class="card__spec mono">ATMOS 9.2.6 · FIBER STAR CEILING · ACOUSTIC ISOLATION</p>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__media"><img src="./assets/project-rack.jpg" alt="Immaculate network rack glowing with blue status lights" loading="lazy"></figure>
+            <div class="card__meta">
+              <span class="card__num mono">P.04</span>
+              <h3 class="card__name">Estate Data Room</h3>
+              <p class="card__spec mono">42U DUAL RACK · UPS · 10G TO EVERY ROOM</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process section" id="process">
+      <div class="section__rail mono" aria-hidden="true">
+        <span class="section__index">05</span>
+        <span class="section__name">PROCESS</span>
+      </div>
+      <h2 class="process__title">Four moves, <span class="italic-accent">zero noise</span></h2>
+      <div class="process__flow">
+        <svg class="process__line" id="processLine" viewBox="0 0 4 800" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M2,0 V800" />
+        </svg>
+        <ol class="process__steps">
+          <li class="step">
+            <span class="step__node" aria-hidden="true"></span>
+            <span class="step__num mono">STEP 01</span>
+            <h3 class="step__name">Survey</h3>
+            <p class="step__desc">We walk every inch before we quote a foot. Site conditions, pathways, interference, future load.</p>
+          </li>
+          <li class="step">
+            <span class="step__node" aria-hidden="true"></span>
+            <span class="step__num mono">STEP 02</span>
+            <h3 class="step__name">Design</h3>
+            <p class="step__desc">Every run mapped, every rack elevation drawn, every device addressed before a single box opens.</p>
+          </li>
+          <li class="step">
+            <span class="step__node" aria-hidden="true"></span>
+            <span class="step__num mono">STEP 03</span>
+            <h3 class="step__name">Install</h3>
+            <p class="step__desc">Millimeter-level dressing, sweeping bend radii, torque-spec terminations. The part we are famous for.</p>
+          </li>
+          <li class="step">
+            <span class="step__node" aria-hidden="true"></span>
+            <span class="step__num mono">STEP 04</span>
+            <h3 class="step__name">Commission</h3>
+            <p class="step__desc">Every endpoint tested and certified, every reading documented. Then we hand you one remote, not eleven.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="cta__pulse" aria-hidden="true"><span></span></div>
+      <h2 class="cta__title">
+        <span class="cta__row">MAKE IT</span>
+        <span class="cta__row cta__row--accent">FLOW<span class="cta__dot">.</span></span>
+      </h2>
+      <p class="cta__sub">Tell us about the building. We will tell you what it could feel like.</p>
+      <a class="btn-pill btn-pill--big" href="mailto:hello@smartinstallers.com" data-magnetic data-cursor="link">
+        <span class="btn-pill__text">Start a project</span>
+        <span class="btn-pill__fill" aria-hidden="true"></span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <span class="footer__brand">CURRENT<span class="footer__bolt">⚡</span></span>
+      <span class="mono footer__note">A concept experience for SMART INSTALLERS</span>
+      <span class="mono footer__note">Designed &amp; built end-to-end by Claude (Fable 5)</span>
+      <a class="mono footer__link" href="./guide/index.html" data-cursor="link">HOW THIS SITE WAS MADE →</a>
+    </div>
+  </footer>
+
+  <script src="./vendor/gsap.min.js"></script>
+  <script src="./vendor/ScrollTrigger.min.js"></script>
+  <script src="./vendor/SplitText.min.js"></script>
+  <script src="./vendor/lenis.min.js"></script>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

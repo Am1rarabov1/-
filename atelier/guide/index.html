@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How Atelier Was Made</title>
+<meta name="description" content="How this quiet-luxury site was designed and built by Claude (Fable 5): AI photography and video, sticky chapter storytelling, an interactive lighting dial, and the recipe to repeat it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23EDE7DC'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%232A211B' stroke-width='2'/%3E%3Ccircle cx='32' cy='19' r='3.4' fill='%23B98A4A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .guide { max-width: 780px; margin: 0 auto; padding: 90px var(--gutter) 100px; }
+  .guide__kicker { color: var(--amber); font-size: 20px; display: block; margin-bottom: 14px; }
+  .guide h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(38px, 6.5vw, 76px);
+    line-height: 1.02;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+  .guide__intro { color: var(--espresso-soft); font-size: 17px; margin-bottom: 56px; }
+  .guide h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(24px, 3.4vw, 36px);
+    letter-spacing: 0.04em;
+    margin: 54px 0 14px;
+    padding-top: 26px;
+    border-top: 1px solid var(--hairline);
+  }
+  .guide h2 .n { font-family: var(--serif); font-style: italic; color: var(--amber); font-size: 0.72em; margin-right: 12px; }
+  .guide p, .guide li { color: var(--espresso-soft); margin-bottom: 13px; }
+  .guide strong { color: var(--espresso); font-weight: 500; }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 14px; }
+  .guide code {
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    background: var(--bone-deep);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+  .guide__back {
+    color: var(--amber);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .guide__back:hover { color: var(--espresso); }
+  .r-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  .r-table td { border-top: 1px solid var(--hairline); padding: 11px 16px 11px 0; color: var(--espresso-soft); vertical-align: top; }
+  .r-table td:first-child { color: var(--espresso); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; }
+  .veil { display: none; }
+</style>
+</head>
+<body>
+  <header class="bar is-scrolled">
+    <a class="bar__brand" href="../index.html"><span class="bar__mark" aria-hidden="true"></span>ATELIER<span class="bar__by">/guide</span></a>
+    <nav class="bar__nav"><a class="bar__cta" href="../index.html">Back to the site</a></nav>
+  </header>
+
+  <main class="guide">
+    <span class="guide__kicker serif-i">The making-of, told plainly</span>
+    <h1>How Atelier was made</h1>
+    <p class="guide__intro">
+      Atelier is the third of three Smart Installers experiences designed and built autonomously by
+      <strong>Claude (Fable 5)</strong> — and it is deliberately the softest. Where
+      <a class="guide__back" href="../../current/index.html">CURRENT</a> is a WebGL night-drive and
+      <a class="guide__back" href="../../signal/index.html">The Signal Standard</a> is ink on newsprint,
+      Atelier is dusk light and photography. Three universes, one company. Here is how this one works.
+    </p>
+
+    <h2><span class="n">i.</span>Photography-first design</h2>
+    <p>The concept — <strong>"technology you feel, not see"</strong> — forbids the usual smart-home
+      clichés: no glowing app screenshots, no floating dashboards. Instead the site is carried by a
+      set of AI-generated photographs (Higgsfield's nano banana pro model) shot to one lighting brief:
+      dusk, warm practicals waking up, bone/sage/espresso palette, film grain, nobody home. Because
+      every image obeys the same brief, they read as one architectural shoot.</p>
+    <p>The hero goes further: the lead photograph was handed to <strong>Kling 3.0 Turbo</strong>
+      (via Higgsfield) as a start frame and animated into a slow push-in where the lamps gradually
+      brighten — a cinemagraph, not a stock loop. It ships as a muted, looping, <code>playsinline</code>
+      video with the original still as its poster, and reduced-motion users get the still.</p>
+
+    <h2><span class="n">ii.</span>Type as scent, not shout</h2>
+    <table class="r-table">
+      <tr><td>Display</td><td><strong>Italiana</strong> — a hairline engraver's roman, letterspaced hard (<code>0.18em</code>) so ATELIER reads like a plaque, not a logo.</td></tr>
+      <tr><td>Voice</td><td><strong>Cormorant Garamond italic</strong> for asides and numerals — the handwriting in the margins.</td></tr>
+      <tr><td>Body</td><td><strong>Karla light</strong> — plain enough to disappear.</td></tr>
+      <tr><td>Palette</td><td>Bone <code>#ede7dc</code> · espresso <code>#2a211b</code> · sage <code>#8a9b8e</code> · candle amber <code>#b98a4a</code>. The photographs supply all the warmth.</td></tr>
+    </table>
+
+    <h2><span class="n">iii.</span>The two set pieces</h2>
+    <ul>
+      <li><strong>Room chapters with a sticky lens.</strong> The Rooms section is a two-column grid:
+        the left column is <code>position: sticky</code> for a full viewport height while four text
+        chapters scroll past on the right. ScrollTrigger watches each chapter and crossfades the
+        corresponding photograph in the sticky frame (opacity + a slow settle from
+        <code>scale(1.08)</code>), with a Cormorant numeral marking the room. It reads like turning
+        pages in a monograph.</li>
+      <li><strong>The Dial.</strong> A real interaction, not a video of one: four lighting scenes
+        (Entertain / Screening / Unwind / Goodnight) re-light the same photograph live using layered
+        CSS — a gradient wash in <code>mix-blend-mode: multiply</code> plus brightness/sepia filters —
+        while the caption rewrites itself. It demonstrates the product (scenes) with the medium
+        (light) instead of explaining it.</li>
+    </ul>
+
+    <h2><span class="n">iv.</span>Motion at candle speed</h2>
+    <p>Lenis runs the scroll with a low lerp (0.085) so the page glides. Every reveal is the same
+      quiet move — 40px rise, one second, <code>power3.out</code> — because in a luxury register,
+      variety of animation is noise. The only theatrical beat is the opening: the word ATELIER
+      tightens its letterspacing out of a bone-colored veil, then the video fades up already moving.
+      All of it collapses gracefully under <code>prefers-reduced-motion</code>.</p>
+
+    <h2><span class="n">v.</span>The stack</h2>
+    <table class="r-table">
+      <tr><td>Markup</td><td>Hand-written static HTML — no framework, no build.</td></tr>
+      <tr><td>Motion</td><td>GSAP 3 + ScrollTrigger + SplitText, Lenis. Self-hosted.</td></tr>
+      <tr><td>Media</td><td>Higgsfield image model for stills, Kling 3.0 Turbo for the hero cinemagraph; optimized to JPEG/H.264 in CI with ffmpeg.</td></tr>
+      <tr><td>Hosting</td><td>GitHub Pages via Actions; the folder deploys to Netlify unchanged: <code>netlify deploy --prod --dir atelier</code>.</td></tr>
+    </table>
+
+    <h2><span class="n">vi.</span>Repeat this yourself</h2>
+    <ol>
+      <li>Write one lighting brief and generate every image with it. Consistency of light is what makes AI photography read as a real shoot.</li>
+      <li>Animate only your lead image (image-to-video, "slow push-in, practicals brighten") — one living photograph beats ten stock clips.</li>
+      <li>Pick a hairline display face and letterspace it; put your personality in an italic serif, and keep body text invisible.</li>
+      <li>Build one honest interaction that demonstrates the product — a dial, a toggle, a slider — instead of describing it.</li>
+      <li>Use one reveal animation everywhere. Restraint is the luxury.</li>
+      <li>Critique your own screenshots at least three times before shipping. This site went through three passes.</li>
+    </ol>
+
+    <p style="margin-top: 48px;">
+      <a class="guide__back" href="../index.html">← Return to Atelier</a><br><br>
+      <a class="guide__back" href="../../current/index.html">First experience: CURRENT →</a>
+    </p>
+  </main>
+
+  <footer class="foot">
+    <span>ATELIER — by Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+  </footer>
+</body>
+</html>

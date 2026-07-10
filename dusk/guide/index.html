@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/guide — How Dusk Was Made</title>
+<meta name="description" content="How this evening-scrub scroll story was built by Claude (Fable 5): a page whose palette falls from golden hour to midnight, a scroll-driven clock, and the recipe to repeat it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231A1622'/%3E%3Ccircle cx='32' cy='40' r='14' fill='%23E5B96F'/%3E%3Crect x='10' y='40' width='44' height='16' fill='%231A1622'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+  .veil { display: none; }
+  .guide { max-width: 780px; margin: 0 auto; padding: 120px var(--gutter) 100px; }
+  .guide__kicker { color: var(--accent); font-size: 20px; display: block; margin-bottom: 14px; }
+  .guide h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(40px, 6.6vw, 80px); line-height: 1.02; margin-bottom: 20px; }
+  .guide__intro { color: var(--fg-soft); font-size: 17px; margin-bottom: 54px; }
+  .guide h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.4vw, 38px); margin: 52px 0 14px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+  .guide h2 .n { font-style: italic; color: var(--accent); font-size: 0.74em; margin-right: 12px; }
+  .guide p, .guide li { color: var(--fg-soft); margin-bottom: 13px; }
+  .guide strong { color: var(--fg); font-weight: 500; }
+  .guide ul, .guide ol { padding-left: 22px; margin-bottom: 14px; }
+  .guide code { font-family: ui-monospace, monospace; font-size: 13px; border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 6px; }
+  .guide__back { color: var(--accent); text-decoration: none; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .guide__back:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+  <header class="bar is-scrolled">
+    <a class="bar__brand" href="../index.html"><span class="bar__disc" aria-hidden="true"></span>DUSK<span class="bar__by serif-i">/guide</span></a>
+    <nav class="bar__nav"><a class="bar__cta" href="../index.html">Back to the evening</a></nav>
+  </header>
+
+  <main class="guide">
+    <span class="guide__kicker serif-i">The making-of, told plainly</span>
+    <h1>How Dusk was made</h1>
+    <p class="guide__intro">
+      Dusk is part of the Atelier Collection — sister sites to
+      <a class="guide__back" href="../../atelier/index.html">Atelier</a> built autonomously by
+      <strong>Claude (Fable 5)</strong>. Its premise: <strong>the page is one evening</strong>.
+      You scroll from 17:42 to 23:58, and everything — the light of the page itself included —
+      keeps time with you.
+    </p>
+
+    <h2><span class="n">i.</span>The palette is the protagonist</h2>
+    <p>The whole design lives in seven CSS custom properties (background, foreground, accent,
+      hairlines, ghost numerals). As each time-chapter approaches, GSAP <strong>scrubs those
+      variables</strong> between phases with <code>gsap.utils.interpolate</code>: warm parchment
+      at golden hour, a mauve-grey blue hour, a plum night, and a near-black midnight. The page
+      literally gets darker as the evening gets later — the scroll bar is a sunset.</p>
+
+    <h2><span class="n">ii.</span>A clock you scroll</h2>
+    <p>A fixed rail on the right shows the time of evening, computed from scroll progress:
+      <code>17:42 + (23:58 − 17:42) × progress</code>, with a thin amber line filling as the
+      night advances. The chapter markers in the nav are times, not names. It turns the
+      scrollbar into narrative time — the cheapest "wow" per line of code on any of these six
+      sites.</p>
+
+    <h2><span class="n">iii.</span>Chapter choreography</h2>
+    <ul>
+      <li><strong>Ghost numerals</strong> — each chapter's time (19:06, 21:30…) sits behind the content at ~26vw, drifting horizontally on scrub like a watermark in motion.</li>
+      <li><strong>Un-clipping images</strong> — every photograph starts matted (<code>inset(6% 8%)</code>) and relaxes to full-bleed as it approaches center, while the image inside counter-parallaxes and settles from <code>scale(1.12)</code>.</li>
+      <li><strong>Alternating layouts</strong> — chapters flip left/right via <code>direction: rtl</code> on the grid, so the eye zigzags down the evening.</li>
+      <li><strong>A starfield finale</strong> — 70 CSS-animated stars twinkle in over the last-light photograph, each with a random period and delay.</li>
+    </ul>
+
+    <h2><span class="n">iv.</span>The stack &amp; the recipe</h2>
+    <ul>
+      <li>Static HTML, GSAP + ScrollTrigger + SplitText, Lenis. Cormorant Garamond and Jost, self-hosted.</li>
+      <li>Photography generated with Higgsfield to a time-of-day brief (same room, different hours); the golden-hour hero was animated with Kling 3.0 Turbo — drifting dust motes in the sun shafts.</li>
+      <li>To repeat: choose a dimension that maps naturally onto scroll (time, depth, altitude, seasons), express it in CSS variables, and scrub them. One good mapping beats twenty animations.</li>
+      <li><code>prefers-reduced-motion</code> pins the site to a single readable phase with no scrubbing.</li>
+    </ul>
+
+    <p style="margin-top: 48px;">
+      <a class="guide__back" href="../index.html">← Back to Dusk</a><br><br>
+      <a class="guide__back" href="../../sanctum/index.html">Next in the collection: Sanctum →</a>
+    </p>
+  </main>
+
+  <footer class="foot">
+    <span>DUSK — by Smart Installers</span>
+    <span>Designed &amp; built end-to-end by Claude (Fable 5)</span>
+  </footer>
+</body>
+</html>

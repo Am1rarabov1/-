@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Installers × Fable — One Company, Six Experiences</title>
+<meta name="description" content="Six websites for the same low-voltage company, designed and built end-to-end by Claude (Fable 5): a WebGL night-drive, a kinetic broadsheet, and the four-site quiet-luxury Atelier Collection.">
+<meta property="og:title" content="Smart Installers × Fable">
+<meta property="og:description" content="One company. Six experiences. Designed and built end-to-end by Claude (Fable 5).">
+<meta property="og:image" content="https://am1rarabov1.github.io/-/atelier/assets/hero-living.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101016'/%3E%3Cpath d='M36 8 L20 36 h10 L26 56 L46 26 h-11 z' fill='%23f0efe9'/%3E%3C/svg%3E">
+<style>
+  @font-face {
+    font-family: 'Syne';
+    src: url('./current/fonts/syne-latin-wght-normal.woff2') format('woff2-variations');
+    font-weight: 400 800;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Fraunces';
+    src: url('./signal/fonts/fraunces-latin-full-normal.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Fraunces';
+    src: url('./signal/fonts/fraunces-latin-full-italic.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Italiana';
+    src: url('./atelier/fonts/italiana-latin-400-normal.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('./current/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0e0e13;
+    --fg: #f0efe9;
+    --dim: rgba(240, 239, 233, 0.55);
+    --faint: rgba(240, 239, 233, 0.26);
+    --hairline: rgba(240, 239, 233, 0.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px clamp(18px, 3vw, 44px) 16px;
+    border-bottom: 1px solid var(--hairline);
+    flex-wrap: wrap;
+  }
+  header .t { color: var(--fg); }
+  header .s { color: var(--faint); }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .row {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    position: relative;
+  }
+  .row + .row { border-top: 1px solid var(--hairline); }
+  .row__tag {
+    position: absolute;
+    top: 10px;
+    left: clamp(18px, 3vw, 44px);
+    z-index: 3;
+    color: rgba(240, 239, 233, 0.8);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    pointer-events: none;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  }
+  .door {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: var(--fg);
+    overflow: hidden;
+    border-right: 1px solid var(--hairline);
+    transition: flex 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .door:last-child { border-right: none; }
+  .door:hover, .door:focus-visible { flex: 1.75; outline: none; }
+  .door__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.06);
+    transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s;
+    filter: saturate(0.85) brightness(0.8);
+  }
+  .door:hover .door__bg { transform: scale(1.0); filter: saturate(1) brightness(1); }
+  .door__tint { position: absolute; inset: 0; }
+  .door--current .door__tint { background: linear-gradient(to top, rgba(4, 6, 14, 0.94), rgba(4, 6, 14, 0.25) 55%); }
+  .door--signal .door__tint { background: linear-gradient(to top, rgba(23, 21, 18, 0.92), rgba(246, 241, 229, 0.06) 60%); }
+  .door--atelier .door__tint { background: linear-gradient(to top, rgba(26, 19, 14, 0.92), rgba(26, 19, 14, 0.18) 55%); }
+
+  .door__body {
+    position: relative;
+    padding: 26px clamp(18px, 2.6vw, 40px) 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .door__no { color: var(--faint); font-size: 11px; letter-spacing: 0.2em; }
+  .door__name { line-height: 1; }
+  .door--current .door__name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(26px, 3.4vw, 52px); letter-spacing: 0.02em; color: #8fa0ff; }
+  .door--signal .door__name { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 144, 'WONK' 1; font-weight: 600; font-size: clamp(28px, 3.6vw, 56px); color: #f6f1e5; }
+  .door--signal .door__name em { color: #ff5200; }
+  .door--atelier .door__name { font-family: 'Italiana', serif; font-size: clamp(26px, 3.4vw, 52px); letter-spacing: 0.16em; color: #ede7dc; }
+  .door__desc {
+    color: var(--dim);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    max-width: 340px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.5s 0.12s, transform 0.5s 0.12s;
+  }
+  .door:hover .door__desc, .door:focus-visible .door__desc { opacity: 1; transform: none; }
+  .door__cta { color: var(--fg); font-size: 11px; letter-spacing: 0.18em; }
+  .door--current .door__cta { color: #8fa0ff; }
+  .door--signal .door__cta { color: #ff5200; }
+  .door--atelier .door__cta { color: #d9b581; }
+  .door--maison .door__tint { background: linear-gradient(to top, rgba(26, 19, 12, 0.92), rgba(26, 19, 12, 0.2) 55%); }
+  .door--dusk .door__tint { background: linear-gradient(to top, rgba(38, 26, 12, 0.9), rgba(38, 26, 12, 0.14) 55%); }
+  .door--sanctum .door__tint { background: linear-gradient(to top, rgba(12, 8, 6, 0.94), rgba(12, 8, 6, 0.28) 55%); }
+  .door--maison .door__name { font-family: 'Italiana', serif; font-size: clamp(24px, 3vw, 46px); letter-spacing: 0.24em; color: #f2ede4; }
+  .door--dusk .door__name { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 100; font-weight: 340; font-style: italic; font-size: clamp(28px, 3.6vw, 54px); color: #f4cd8d; }
+  .door--sanctum .door__name { font-family: 'Italiana', serif; font-size: clamp(24px, 3vw, 46px); letter-spacing: 0.24em; color: #e6c290; }
+  .door--maison .door__cta { color: #d9b581; }
+  .door--dusk .door__cta { color: #f4cd8d; }
+  .door--sanctum .door__cta { color: #d9a85c; }
+  .row--solo { flex: 0.85; }
+  .door--smart .door__tint { background: linear-gradient(to top, rgba(22, 15, 9, 0.92), rgba(22, 15, 9, 0.18) 60%); }
+  .door--smart .door__name { font-family: 'Italiana', serif; font-size: clamp(22px, 2.8vw, 44px); letter-spacing: 0.26em; color: #ede7dc; }
+  .door--smart .door__cta { color: #e9c99a; }
+  .door--smart .door__desc { max-width: 520px; }
+  .door--smart:hover { flex: 1; }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px 32px;
+    flex-wrap: wrap;
+    padding: 16px clamp(18px, 3vw, 44px) 20px;
+    border-top: 1px solid var(--hairline);
+    color: var(--faint);
+  }
+  footer a { color: var(--dim); text-decoration: none; }
+  footer a:hover { color: var(--fg); }
+
+  @media (max-width: 800px) {
+    .row { flex-direction: column; }
+    .row__tag { position: static; padding: 10px clamp(18px, 3vw, 44px) 0; display: block; }
+    .door { border-right: none; border-bottom: 1px solid var(--hairline); min-height: 200px; }
+    .door__desc { display: none; }
+    header .s { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .door, .door__bg, .door__desc { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <header class="mono">
+    <span class="t">SMART INSTALLERS × FABLE</span>
+    <span class="s">ONE COMPANY — SIX EXPERIENCES</span>
+    <span class="s">EACH SITE EXPLAINS ITSELF AT /GUIDE</span>
+  </header>
+
+  <main>
+   <div class="row">
+    <span class="row__tag">THE ORIGINAL TRIO — THREE UNIVERSES</span>
+    <a class="door door--current" href="./current/index.html">
+      <span class="door__bg" style="background-image: url('./current/assets/project-fiber.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 01 — SPECTACLE</span>
+        <span class="door__name">CURRENT</span>
+        <span class="door__desc">A WebGL night-drive. Custom signal-field shaders, a pinned horizontal gallery, magnetic buttons, one drop of vermilion.</span>
+        <span class="door__cta mono">ENTER →</span>
+      </span>
+    </a>
+
+    <a class="door door--signal" href="./signal/index.html">
+      <span class="door__bg" style="background-image: url('./signal/assets/rackroom.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 02 — BROADSHEET</span>
+        <span class="door__name">The <em>Signal</em> Standard</span>
+        <span class="door__desc">A trade journal set in wonky Fraunces: halftone photography, a self-drawing wiring schematic, a cut-out coupon.</span>
+        <span class="door__cta mono">READ →</span>
+      </span>
+    </a>
+
+    <a class="door door--atelier" href="./atelier/index.html">
+      <span class="door__bg" style="background-image: url('./atelier/assets/hero-living.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 03 — QUIET LUXURY</span>
+        <span class="door__name">ATELIER</span>
+        <span class="door__desc">Dusk photography brought to life with AI video, sticky room chapters, and a lighting dial you can actually turn.</span>
+        <span class="door__cta mono">FEEL →</span>
+      </span>
+    </a>
+   </div>
+
+   <div class="row">
+    <span class="row__tag">THE ATELIER COLLECTION — MORE MOTION, SAME DUSK</span>
+    <a class="door door--maison" href="./maison/index.html">
+      <span class="door__bg" style="background-image: url('./maison/assets/hall.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 04 — THE TOUR</span>
+        <span class="door__name">MAISON</span>
+        <span class="door__desc">A house tour at dusk: pinned mask-wipe room transitions, parallax on three speeds, and a frame that becomes an arch.</span>
+        <span class="door__cta mono">WALK →</span>
+      </span>
+    </a>
+    <a class="door door--dusk" href="./dusk/index.html">
+      <span class="door__bg" style="background-image: url('./dusk/assets/golden.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 05 — THE HOUR</span>
+        <span class="door__name">Dusk</span>
+        <span class="door__desc">Scroll from 17:42 to 23:58: the page's own light falls from golden hour to midnight while a clock keeps your time.</span>
+        <span class="door__cta mono">SET →</span>
+      </span>
+    </a>
+    <a class="door door--sanctum" href="./sanctum/index.html">
+      <span class="door__bg" style="background-image: url('./sanctum/assets/screen.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 06 — THE SCREENING</span>
+        <span class="door__name">SANCTUM</span>
+        <span class="door__desc">A night at the house cinema: curtains that really part, a scroll that zooms through the screen, and end credits you control.</span>
+        <span class="door__cta mono">ENTER →</span>
+      </span>
+    </a>
+   </div>
+
+   <div class="row row--solo">
+    <span class="row__tag">THE REAL ONE — SMARTINSTALLERS.COM COPY, ATELIER DESIGN</span>
+    <a class="door door--smart" href="./smart/index.html">
+      <span class="door__bg" style="background-image: url('./smart/assets/facade.jpg')" aria-hidden="true"></span>
+      <span class="door__tint" aria-hidden="true"></span>
+      <span class="door__body">
+        <span class="door__no mono">EXPERIENCE 07 — THE HOMEPAGE, REMADE</span>
+        <span class="door__name">SMART INSTALLERS</span>
+        <span class="door__desc">The company's actual website copy — services, projects, clients, the 500+ — re-set in the Atelier system with new dusk photography of New York itself.</span>
+        <span class="door__cta mono">VISIT →</span>
+      </span>
+    </a>
+   </div>
+  </main>
+
+  <footer class="mono">
+    <span>DESIGNED &amp; BUILT END-TO-END BY CLAUDE (FABLE 5)</span>
+    <span>IMAGERY &amp; VIDEO GENERATED WITH HIGGSFIELD</span>
+    <a href="./current/guide/index.html">HOW IT WAS ALL MADE →</a>
+  </footer>
+</body>
+</html>
