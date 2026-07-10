@@ -720,7 +720,8 @@ body {
 }
 @media (max-width: 600px) {
   .veil__word { letter-spacing: 0.24em; padding-left: 0.24em; }
-  .bar__brand { font-size: 14px; letter-spacing: 0.2em; }
+  .bar__brand { font-size: 15px; letter-spacing: 0.22em; }
+  .bar__cta { display: none; }
   .hero__ctas { flex-direction: column; gap: 22px; }
 }
 
